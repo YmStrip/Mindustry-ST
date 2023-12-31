@@ -1,0 +1,21 @@
+{
+  "name": "暗元素墙"
+  "description": ""
+  "type": "Wall"
+  "health": 3500
+  "size": 1
+  //反弹 0f ~ 100f
+  "chanceDeflect": -1
+  //绝缘的
+  "insulated": true
+  //吸收激光
+  "absorbLasers": true
+  "requirements": [
+    {
+      "item": "暗元素"
+      "amount": 6
+    }
+  ]
+  "category": "defense"
+  "research": "光元素墙"
+}

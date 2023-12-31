@@ -1,0 +1,26 @@
+{
+  "name": "量子仓库"
+  "buildCostMultiplier": 0.3
+  "description": "储存更多的物品"
+  "type": "StorageBlock"
+  "itemCapacity": 60000
+  "hasItems": true
+  "health": 35000
+  "size": 1
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 30
+    }
+    {
+      "item": "土元素"
+      "amount": 120
+    }
+    {
+      "item": "木元素"
+      "amount": 60
+    }
+  ]
+  "category": "effect"
+  "research": "container"
+}

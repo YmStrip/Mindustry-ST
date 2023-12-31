@@ -1,0 +1,461 @@
+{
+  "type": "ItemTurret",
+  "researchCostMultiplier": 8,
+  "name": "远星",
+  "description": "超轨道炮"
+  "size": 8,
+  "health": 36000,
+  "range": 1000,
+  "shoot": {
+    "type": "ShootAlternate",
+    "barrels": 1,
+    "spread": 1
+    "Cone": 45
+    "shots": 1
+  },
+  "burstSpacing": 10,
+  "reload": 120,
+  "inaccuracy": 0,
+  "ammoPerShot": 50,
+  "maxAmmo": 450,
+  "buildCostMultiplier": 50
+  "targetAir": true,
+  "targetGround": true,
+  "recoilAmount": 4,
+  "shootShake": 1,
+  "restitution": 0.05,
+  "shootSound": "laser",
+  "chargeSound": "lasercharge",
+  "chargeTime": 80,
+  "chargeEffects": 1,
+  "chargeBeginEffect": {
+    "type": "ParticleEffect",
+    "particles": 1,
+    "sizeFrom": 0,
+    "sizeTo": 10,
+    "length": 0,
+    "lifetime": 80,
+    "colorFrom": "FFFFFFFF",
+    "colorTo": "FFFFFFFF",
+    "cone": 360
+  },
+  "chargeEffect": {
+    "type": "MultiEffect",
+    "lifetime": 80,
+    "effects": [
+      {
+        "type": "WaveEffect",
+        "lifetime": 80,
+        "sizeFrom": 0,
+        "sizeTo": 40,
+        "strokeFrom": 0,
+        "strokeTo": 6,
+        "colorFrom": "FFFFFFFF",
+        "colorTo": "ffffffff"
+      },
+      {
+        "type": "ParticleEffect",
+        "particles": 10,
+        "sizeFrom": 5,
+        "sizeTo": 0,
+        "length": 45,
+        "baseLength": -45,
+        "lifetime": 80,
+        "colorFrom": "ffffffff",
+        "colorTo": "FFFFFFFF",
+        "cone": 360
+      }
+    ]
+  },
+  "hasPower": true,
+  "powerUse": 2000,
+  "ammoTypes": {
+    "titanium": {
+      "type": "pointBulletType",
+      "damage": 5000,
+      "lightningColor": "bbdefb",
+      "lightning": 8,
+      "lightningLength": 10,
+      "lightningDamage": 100,
+      "ammoMultiplier": 3,
+      "pierce": true,
+      "speed": 1000,
+      "trailSpacing": 20,
+      "collidesTiles": true,
+      "buildingDamageMultiplier": 0.25,
+      "trailColor": "90caf9",
+      "trailEffect": {
+        "type": "ParticleEffect",
+        "particles": 1,
+        "length": 0,
+        "lifetime": 35,
+        "sizeFrom": 40,
+        "region": "增强工业-136-wide",
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "despawnEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "hitEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      }
+    },
+    "plastanium": {
+      "type": "pointBulletType",
+      "damage": 3000,
+      "lightningColor": "bbdefb",
+      "lightning": 8,
+      "lightningLength": 10,
+      "lightningDamage": 600,
+      "ammoMultiplier": 3,
+      "pierce": true,
+      "speed": 1000,
+      "trailSpacing": 20,
+      "collidesTiles": true,
+      "buildingDamageMultiplier": 0.5,
+      "trailColor": "90caf9",
+      "trailEffect": {
+        "type": "ParticleEffect",
+        "particles": 1,
+        "length": 0,
+        "lifetime": 35,
+        "sizeFrom": 40,
+        "region": "增强工业-136-wide",
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "despawnEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "hitEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      }
+      "fragBullets": 8,
+      "fragBullet": {
+        "type": "LaserBulletType"
+        "hitEffect": {
+          "type": "WaveEffect",
+          "lifetime": 35,
+          "sizeFrom": 0,
+          "sizeTo": 45,
+          "strokeFrom": 4,
+          "strokeTo": 0,
+          "colorFrom": "bbdefb",
+          "colorTo": "90caf9"
+        }
+        "despawnEffect": {
+          "type": "WaveEffect",
+          "lifetime": 35,
+          "sizeFrom": 0,
+          "sizeTo": 45,
+          "strokeFrom": 4,
+          "strokeTo": 0,
+          "colorFrom": "bbdefb",
+          "colorTo": "90caf9"
+        }
+        "length": 144
+        "width": 24
+        "hitSize": 8
+        "lifetime": 24
+        "drawSize": 400
+        "damage": 360
+      }
+    }
+    "surge-alloy": {
+      "type": "LaserBulletType",
+      "length": 1000,
+      "colors": [
+        "ffd37f"
+        "eab678"
+        "000000"
+      ]
+      "damage": 2400,
+      "width": 75,
+      "despawnEffect": "none"
+      "lifetime": 65,
+      "hitEffect": {
+        "type": "WaveEffect",
+        "lifetime": 60,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "ffd37f",
+        "colorTo": "ffd37f"
+      }
+      "lightningSpacing": 50,
+      "lightningLength": 8,
+      "lightningDelay": 1.1,
+      "lightningLengthRand": 25,
+      "lightningDamage": 540,
+      "lightningAngleRand": 50,
+      "lightcolor": "70cc86"
+      "fragBullets": 3,
+      "fragBullet": {
+        "type": "BasicBulletType",
+        "damage": 500,
+        "splashDamageRadius": 48,
+        "splashDamage": 450,
+        "width": 11,
+        "height": 15,
+        "speed": 2,
+        "lifetime": 540,
+        "hitEffect": "plasticExplosion",
+        "backColor": "F9F900",
+        "frontColor": "F9F900",
+        "reloadMultiplier": 3,
+        "ammoMultiplier": 1,
+        "collidesGround": true
+        "lightning": 3,
+        "lightningLength": 80
+      }
+    }
+    "离子合金": {
+      "type": "pointBulletType",
+      "damage": 8000,
+      "lightningColor": "bbdefb",
+      "lightning": 8,
+      "lightningLength": 100,
+      "lightningDamage": 1800,
+      "ammoMultiplier": 3,
+      "pierce": true,
+      "speed": 1000,
+      "trailSpacing": 20,
+      "collidesTiles": true,
+      "buildingDamageMultiplier": 0.75,
+      "trailColor": "90caf9",
+      "trailEffect": {
+        "type": "ParticleEffect",
+        "particles": 1,
+        "length": 0,
+        "lifetime": 35,
+        "sizeFrom": 40,
+        "region": "增强工业-136-wide",
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "despawnEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "hitEffect": {
+        "type": "WaveEffect",
+        "lifetime": 35,
+        "sizeFrom": 0,
+        "sizeTo": 45,
+        "strokeFrom": 4,
+        "strokeTo": 0,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      }
+      "fragBullets": 6,
+      "fragBullet": {
+        "type": "LaserBulletType"
+        "hitEffect": {
+          "type": "WaveEffect",
+          "lifetime": 35,
+          "sizeFrom": 0,
+          "sizeTo": 45,
+          "strokeFrom": 4,
+          "strokeTo": 0,
+          "colorFrom": "bbdefb",
+          "colorTo": "90caf9"
+        }
+        "despawnEffect": {
+          "type": "WaveEffect",
+          "lifetime": 35,
+          "sizeFrom": 0,
+          "sizeTo": 45,
+          "strokeFrom": 4,
+          "strokeTo": 0,
+          "colorFrom": "bbdefb",
+          "colorTo": "90caf9"
+        }
+        "colors": [
+          "ffd37f"
+          "eab678"
+          "000000"
+        ]
+        "length": 144
+        "width": 24
+        "hitSize": 8
+        "lifetime": 24
+        "drawSize": 400
+        "damage": 900
+        "fragBullet": {
+          "type": "BasicBulletType",
+          "damage": 250,
+          "splashDamageRadius": 48,
+          "splashDamage": 450,
+          "width": 11,
+          "height": 15,
+          "speed": 2,
+          "lifetime": 540,
+          "hitEffect": "plasticExplosion",
+          "backColor": "F9F900",
+          "frontColor": "F9F900",
+          "reloadMultiplier": 3,
+          "ammoMultiplier": 1,
+          "collidesGround": true
+          "lightning": 3,
+          "lightningLength": 20,
+          "fragBullets": 1,
+          "fragBullet": {
+            "type": "LaserBulletType"
+            "hitEffect": "hitLancer"
+            "despawnEffect": "none"
+            "length": 288
+            "width": 24
+            "hitSize": 8
+            "lifetime": 24
+            "drawSize": 400
+            "colors": [
+              "ffd37f"
+              "eab678"
+              "000000"
+            ]
+            "damage": 600
+            "lightningSpacing": 35,
+            "lightningLength": 5,
+            "lightningDelay": 1.1,
+            "lightningLengthRand": 15,
+            "lightningDamage": 270,
+            "lightningAngleRand": 40
+          }
+        }
+      }
+    }
+    "中子合金": {
+      "type": "pointBulletType",
+      "damage": 100000,
+      "lightningColor": "bbdefb",
+      "lightning": 8,
+      "lightningLength": 80,
+      "lightningDamage": 5000,
+      "ammoMultiplier": 3,
+      "pierce": true,
+      "speed": 1000,
+      "trailSpacing": 20,
+      "collidesTiles": true,
+      "buildingDamageMultiplier": 2,
+      "trailColor": "90caf9",
+      "trailEffect": {
+        "type": "ParticleEffect",
+        "particles": 1,
+        "length": 0,
+        "lifetime": 35,
+        "sizeFrom": 60,
+        "region": "增强工业-136-wide",
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "despawnEffect": {
+        "type": "WaveEffect",
+        "lifetime": 60,
+        "sizeFrom": 0,
+        "sizeTo": 300,
+        "strokeFrom": 0,
+        "strokeTo": 10,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      },
+      "hitEffect": {
+        "type": "WaveEffect",
+        "lifetime": 60,
+        "sizeFrom": 0,
+        "sizeTo": 300,
+        "strokeFrom": 0,
+        "strokeTo": 10,
+        "colorFrom": "bbdefb",
+        "colorTo": "90caf9"
+      }
+    }
+  }
+  "requirements": [
+    {
+      "item": "thorium",
+      "amount": 2500
+    },
+    {
+      "item": "plastanium",
+      "amount": 3000
+    },
+    {
+      "item": "silicon",
+      "amount": 3000
+    },
+    {
+      "item": "graphite",
+      "amount": 3000
+    },
+    {
+      "item": "titanium",
+      "amount": 2500
+    },
+    {
+      "item": "copper",
+      "amount": 5000
+    },
+    {
+      "item": "lead",
+      "amount": 5000
+    },
+    {
+      "item": "phase-fabric",
+      "amount": 1400
+    },
+    {
+      "item": "钛晶",
+      "amount": 2500
+    }
+    {
+      "item": "surge-alloy",
+      "amount": 1100
+    },
+    {
+      "item": "离子合金",
+      "amount": 1500
+    }
+    {
+      "item": "中子合金",
+      "amount": 500
+    }
+  ],
+  "category": "turret",
+  "research": "duo"
+}

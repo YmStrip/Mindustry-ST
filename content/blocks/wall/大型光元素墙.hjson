@@ -1,0 +1,21 @@
+{
+  "name": "大型光元素墙"
+  "description": ""
+  "type": "Wall"
+  "health": 18000
+  "size": 2
+  //反弹 0f ~ 100f
+  "chanceDeflect": 15
+  //绝缘的
+  "insulated": false
+  //吸收激光
+  "absorbLasers": true
+  "requirements": [
+    {
+      "item": "光元素"
+      "amount": 24
+    }
+  ]
+  "category": "defense"
+  "research": "光元素墙"
+}

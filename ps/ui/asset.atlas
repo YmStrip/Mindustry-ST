@@ -1,0 +1,12 @@
+asset-0.png
+size: 100, 29
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ui/button-default
+  rotate: false
+  xy: 0, 0
+  size: 100, 29
+  orig: 100, 29
+  offset: 0, 0
+  index: -1

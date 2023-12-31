@@ -1,0 +1,41 @@
+{
+  "type": "ForceProjector"
+  "name": "究极纳米护盾"
+  "description": "使用电量构建土力场,使用以太能源和增量压缩极大加速了效率"
+  "health": 50000
+  "size": 2
+  "radius": 400
+  "shieldHealth": 150000
+  "phaseUseTime": 3600
+  "cooldownNormal": 6000
+  "cooldownLiquid": 60
+  "cooldownBrokenBase": 5
+  "consumes": {
+    "power": 100
+    "items": {
+      "items": [
+        {
+          "item": "土元素"
+          "amount": 1
+        }
+      ]
+      "booster": true
+    }
+  }
+  "requirements": [
+    {
+      "item": "木元素"
+      "amount": 2500
+    }
+    {
+      "item": "水元素"
+      "amount": 5000
+    }
+    {
+      "item": "光元素"
+      "amount": 1000
+    }
+  ]
+  "category": "effect"
+  "research": "以太护盾"
+}

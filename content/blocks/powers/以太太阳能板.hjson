@@ -1,0 +1,24 @@
+{
+  "type": "SolarGenerator"
+  "name": "以太太阳能版"
+  "description": ""
+  "size": 2
+  "hasPower": true
+  "powerProduction": 16
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 1200
+    }
+    {
+      "item": "光元素"
+      "amount": 100
+    }
+    {
+      "item": "暗元素"
+      "amount": 100
+    }
+  ]
+  "category": "power"
+  "research": "纳米太阳能板"
+}

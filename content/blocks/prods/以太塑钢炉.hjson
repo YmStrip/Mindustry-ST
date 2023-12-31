@@ -1,0 +1,69 @@
+{
+  "type": "GenericCrafter"
+  "buildCostMultiplier": 0.25,
+  "name": "以太塑钢炉"
+  "description": "更高效的塑钢制造"
+  "itemCapacity": 200
+  "health": 500
+  "size": 4
+  "hasPower": true
+  "hasLiquids": true
+  "hasItems": true
+  "craftTime": 60
+  "updateEffect": "none"
+  "drawer": {
+    "type": "DrawMulti"
+    "drawers": [
+      "DrawDefault"
+      "DrawFlame"
+    ]
+  }
+  "liquidCapacity": 200
+  "consumes": {
+    "power": 80
+    "items": {
+      "items": [
+        {
+          "item": "titanium"
+          "amount": 8
+        }
+        {
+          "item": "coal"
+          "amount": 8
+        }
+      ]
+    }
+  }
+  "outputItem": {
+    "item": "plastanium"
+    "amount": 8
+  }
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 500
+    }
+    {
+      "item": "水元素"
+      "amount": 1000
+    }
+    {
+      "item": "木元素"
+      "amount": 500
+    }
+    {
+      "item": "土元素"
+      "amount": 500
+    }
+    {
+      "item": "光元素"
+      "amount": 50
+    }
+    {
+      "item": "暗元素"
+      "amount": 50
+    }
+  ]
+  "category": "crafting"
+  "research": "纳米塑钢炉"
+}

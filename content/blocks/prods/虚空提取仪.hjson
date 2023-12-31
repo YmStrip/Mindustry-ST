@@ -1,0 +1,53 @@
+{
+  "type": "GenericCrafter"
+  "name": "虚空提取仪"
+  "description": "制造暗元素"
+  "itemCapacity": 200
+  "buildCostMultiplier": 1.5
+  "health": 500
+  "size": 4
+  "hasPower": true
+  "hasLiquids": true
+  "hasItems": true
+  "craftTime": 60
+  "updateEffect": "none"
+  "drawer": {
+    "type": "DrawMulti"
+    "drawers": [
+      "DrawDefault"
+      "DrawFlame"
+    ]
+  }
+  "liquidCapacity": 200
+  "consumes": {
+    "power": 200
+  }
+  "outputItem": {
+    "item": "暗元素"
+    "amount": 1
+  }
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 120
+    }
+    {
+      "item": "木元素"
+      "amount": 120
+    }
+    {
+      "item": "水元素"
+      "amount": 120
+    }
+    {
+      "item": "火元素"
+      "amount": 120
+    }
+    {
+      "item": "土元素"
+      "amount": 120
+    }
+  ]
+  "category": "crafting"
+  "research": "究极融合工厂"
+}

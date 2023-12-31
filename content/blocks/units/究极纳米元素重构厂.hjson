@@ -1,0 +1,96 @@
+{
+  "name": "究极纳米元素重构厂"
+  "type": "Reconstructor"
+  "size": 7
+  "constructTime": 18000
+  "liquidCapacity": 300
+  "consumes": {
+    "power": 100
+    "items": {
+      "items": [
+        {
+          "item": "金元素"
+          "amount": 10000
+        }
+        {
+          "item": "木元素"
+          "amount": 10000
+        }
+        {
+          "item": "水元素"
+          "amount": 10000
+        }
+        {
+          "item": "火元素"
+          "amount": 10000
+        }
+        {
+          "item": "土元素"
+          "amount": 10000
+        }
+        {
+          "item": "光元素"
+          "amount": 500
+        }
+        {
+          "item": "暗元素"
+          "amount": 500
+        }
+      ]
+    }
+  }
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 3000
+    }
+    {
+      "item": "木元素"
+      "amount": 3000
+    }
+    {
+      "item": "水元素"
+      "amount": 3000
+    }
+    {
+      "item": "火元素"
+      "amount": 3000
+    }
+    {
+      "item": "土元素"
+      "amount": 3000
+    }
+    {
+      "item": "光元素"
+      "amount": 250
+    }
+    {
+      "item": "暗元素"
+      "amount": 250
+    }
+  ]
+  "upgrades": [
+    [
+      "金-t3"
+      "金-t4"
+    ]
+    [
+      "木-t3"
+      "木-t4"
+    ]
+    [
+      "水-t3"
+      "水-t4"
+    ]
+    [
+      "火-t3"
+      "火-t4"
+    ]
+    [
+      "土-t3"
+      "土-t4"
+    ]
+  ]
+  "category": "units"
+  "research": "双倍纳米元素重构厂"
+}

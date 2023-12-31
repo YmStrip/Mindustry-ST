@@ -1,0 +1,30 @@
+{
+  "type": "MendProjector"
+  "buildCostMultiplier": 0.4,
+  "name": "纳米修复机"
+  "description": ""
+  "health": 1200
+  "size": 2
+  "range": 200
+  "reload": 60
+  "healPercent": 4.66
+  "consumes": {
+    "power": 6
+  }
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 80
+    }
+    {
+      "item": "木元素"
+      "amount": 120
+    }
+    {
+      "item": "土元素"
+      "amount": 80
+    }
+  ]
+  "category": "effect"
+  "research": "mend-projector"
+}
