@@ -5,17 +5,12 @@ import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
 import layer.layer.Logger;
-import mindustry.content.Blocks;
 import mindustry.content.Fx;
 import mindustry.content.StatusEffects;
-import mindustry.entities.Effect;
 import mindustry.entities.bullet.*;
-import mindustry.entities.effect.MultiEffect;
-import mindustry.entities.effect.ParticleEffect;
 import mindustry.entities.effect.WaveEffect;
-import mindustry.gen.Bullet;
 import st.addon.attack.entity.SBullet;
-import st.addon.entity.entity.StItem;
+import st.addon.content.entity.StItem;
 
 @Provider
 public class BulletProvider extends LayerProvider {
@@ -42,6 +37,9 @@ public class BulletProvider extends LayerProvider {
 			}};
 		}
 	};
+	public SBullet 弹药_穿甲弹 = new SBullet() {{
+	
+	}};
 	public SBullet 弹药_激光 = new SBullet() {
 		@Override
 		public BulletType provide(StItem itemP, float rangeP, float speedP, float widthP, float damageP) {

@@ -13,11 +13,9 @@ import mindustry.entities.bullet.PointBulletType;
 import mindustry.entities.effect.WaveEffect;
 import mindustry.gen.Sounds;
 import mindustry.graphics.Drawf;
-import mindustry.graphics.Pal;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.defense.turrets.Turret;
-import st.addon.seffect.provider.CubeBulletType;
 
 import static arc.graphics.g2d.Draw.alpha;
 import static arc.graphics.g2d.Draw.color;
@@ -168,35 +166,6 @@ public class EffectProvider extends LayerProvider {
 			colorFrom = Color.white;
 			colorTo = 颜色;
 		}};
-	}
-	
-	public class 轨道炮子弹 extends PointBulletType {
-		public 轨道炮子弹(Color 亮色, Color 暗色) {
-			super();
-			shootEffect = 发射(亮色, 暗色);
-			hitEffect = 打击(亮色, 暗色);
-			smokeEffect = Fx.smokeCloud;
-			trailEffect = 轨道(亮色, 暗色);
-			despawnEffect = 消失(亮色, 暗色);
-			damage = 2500;
-			reloadMultiplier = 1.5f;
-			buildingDamageMultiplier = -0.5f;
-			speed = 500f;
-			hitShake = 6f;
-			ammoMultiplier = 1f;
-			fragBullets = 12;
-			lifetime = 120f;
-			fragBullet = new CubeBulletType() {{
-				backColor = Color.rgb(0, 255, 255);
-				lifetime = 85f;
-				hitShake = 3f;
-				weaveRandom = true;
-				hitEffect = Fx.fireHit;
-				damage = 800f;
-				speed = 2f;
-			}};
-			init();
-		}
 	}
 	
 	public Effect 轨道_蓝色 = 轨道(青色, 深青色);

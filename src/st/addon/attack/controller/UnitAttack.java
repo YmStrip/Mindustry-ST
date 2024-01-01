@@ -9,15 +9,15 @@ import layer.extend.LayerController;
 import mindustry.game.EventType;
 import st.addon.attack.provider.BulletProvider;
 import st.addon.attack.provider.UnitAttackProvider;
-import st.addon.item.ITEM;
-import st.addon.item.provider.ItemProvider;
+import st.addon.content.SContent;
+import st.addon.content.provider.ItemProvider;
 
 
 @Controller
 public class UnitAttack extends LayerController {
 	@Require(cls = BulletProvider.class)
 	BulletProvider bullets;
-	@Import(cls = ITEM.class)
+	@Import(cls = SContent.class)
 	@Require(cls = ItemProvider.class)
 	ItemProvider items;
 	@Require(cls = UnitAttackProvider.class)

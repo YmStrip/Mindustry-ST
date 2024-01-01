@@ -1,7 +1,7 @@
 package st.addon.attack.entity;
 
 import mindustry.entities.bullet.BulletType;
-import st.addon.entity.entity.StItem;
+import st.addon.content.entity.StItem;
 
 public class SBullet {
 	//弹药外部倍率

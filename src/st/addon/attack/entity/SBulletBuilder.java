@@ -3,9 +3,14 @@ package st.addon.attack.entity;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.BulletType;
 import mindustry.entities.bullet.PointBulletType;
-import st.addon.entity.entity.StItem;
+import st.addon.content.entity.StItem;
 
 public class SBulletBuilder {
+	//避免过度夸张的数值
+	public float speedMultiplier(float speed) {
+		return (float) (0.87951602063152f / Math.pow(speed, 0.846409565237684f));
+	}
+	
 	public SBulletBuilder(SBullet sBulletP, StItem itemP, float rangeP, float speedP, float widthP, float damageMultiplierP) {
 		sBullet = sBulletP;
 		item = itemP;
@@ -55,8 +60,6 @@ public class SBulletBuilder {
 		damageMultiplier = damage / item.damage;
 		return this;
 	}
-	
-	;
 	
 	public SBulletBuilder damageMultiplier(float s) {
 		if (lastRoot != null) {
@@ -211,11 +214,12 @@ public class SBulletBuilder {
 		var damage = 50f;
 		var fragDamage = 50f;
 		sBullet.prepare(this);
+		var speedMultiplier = speedMultiplier(speed);
 		if (frag != null) {
-			damage = d * (1 - fragUse) / speed;
-			fragDamage = d * fragUse / speed;
+			damage = d * (1 - fragUse) * speedMultiplier;
+			fragDamage = d * fragUse * speedMultiplier;
 		} else {
-			damage = d / speed;
+			damage = d * speedMultiplier;
 		}
 		{
 			damage *= sBullet.damageMultiplier;

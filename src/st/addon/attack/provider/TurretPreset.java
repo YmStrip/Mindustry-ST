@@ -12,21 +12,27 @@ import mindustry.world.blocks.defense.turrets.PowerTurret;
 import mindustry.world.blocks.defense.turrets.Turret;
 import mindustry.world.meta.BuildVisibility;
 import st.ST;
-import st.addon.entity.entity.StItem;
-import st.plugin.value.SValue;
-import st.plugin.value.provider.Values;
+import st.addon.content.SContent;
+import st.addon.content.entity.StItem;
+import st.addon.content.provider.TooltipProvider;
+import st.addon.content.provider.ValueProvider;
+
+import javax.tools.Tool;
 
 @Provider
 public class TurretPreset extends LayerProvider {
-	@Import(cls = SValue.class)
-	@Require(cls = Values.class)
-	Values values;
+	@Import(cls = SContent.class)
+	@Require(cls = ValueProvider.class)
+	ValueProvider values;
+	@Import(cls = SContent.class)
+	@Require(cls = TooltipProvider.class)
+	TooltipProvider tooltip;
 	
 	public void inject(Turret t) {
-		inject(t, BuildVisibility.shown);
+		inject(t, 1);
 	}
 	
-	public void inject(Turret t, BuildVisibility buildVisibility) {
+	public void inject(Turret t, int level) {
 		//Basic
 		{
 			t.buildVisibility = BuildVisibility.shown;
@@ -63,6 +69,9 @@ public class TurretPreset extends LayerProvider {
 		{
 			values.health(t);
 		}
+		tooltip
+			.tooltip(t.stats)
+			.techLevel(level);
 	}
 	
 	public TurretPreset injectItem(String name, EffectProvider.callItem callItem) {
