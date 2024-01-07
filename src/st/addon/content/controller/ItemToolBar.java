@@ -20,7 +20,7 @@ public class ItemToolBar extends LayerController {
 		tooltip
 			.tooltip(item.stats)
 			.techLevel(item.techLevel)
-			.showValue("damage", item.damage);
+			.show("damage", item.damage);
 		return this;
 	}
 	

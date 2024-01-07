@@ -25,25 +25,25 @@ public class T4Prods extends LayerProvider {
 	@Require(cls = ProdPreset.class)
 	ProdPreset preset;
 	public GenericCrafter 究极纳米元素融合机 = new GenericCrafter("究极纳米元素融合机") {{
-		size = 4;
+		size = 8;
 		craftTime = 30;
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
 		consumePower(2500f);
 	}};
 	public GenericCrafter 纳米元素流体制造机 = new GenericCrafter("纳米元素流体制造机") {{
-		size = 4;
+		size = 5;
 		craftTime = 60;
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
 		consumePower(20f);
 	}};
 	public GenericCrafter 虚空提取仪 = new GenericCrafter("虚空提取仪") {{
-		size = 4;
+		size = 8;
 		craftTime = 60;
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
-		consumePower(9000f);
+		consumePower(10000f);
 	}};
 	
 	@Override

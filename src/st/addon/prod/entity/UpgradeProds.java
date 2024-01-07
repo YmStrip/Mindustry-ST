@@ -36,7 +36,7 @@ public class UpgradeProds {
 		}
 		
 		public type type;
-		public int size = 2;
+		public int size = 3;
 		
 		public UpgradeProd size(int size) {
 			this.size = size;
@@ -110,17 +110,26 @@ public class UpgradeProds {
 			block.consumePower(power * multiplier);
 		}
 		
+		public float speed = 30f;
+		
 		public UpgradeProd t(type type) {
 			this.type = type;
+			return this;
+		}
+		
+		public UpgradeProd speed(float s) {
+			speed = s;
 			return this;
 		}
 		
 		GenericCrafter block;
 		
 		public GenericCrafter block() {
-			block = new GenericCrafter(name);
+			block = new GenericCrafter(name) {{
+			
+			}};
 			block.size = this.size;
-			block.craftTime = 0.75f;
+			block.craftTime = speed * 0.75f;
 			if (input != null) block.consumeItems(input);
 			if (output != null) block.outputItem = output;
 			if (inputLiquid != null) block.consumeLiquid(inputLiquid.liquid, inputLiquid.amount);

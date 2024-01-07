@@ -28,23 +28,25 @@ public class T1Prods extends LayerProvider {
 	@Require(cls = ProdPreset.class)
 	ProdPreset preset;
 	//纳米碳管构建厂
-	public GenericCrafter 纳米碳管构建厂 = new GenericCrafter("纳米碳管构建厂") {{
+	public GenericCrafter 纳米碳管构建厂 = new GenericCrafter("纳米碳管构造厂") {{
+		size = 3;
 		consumePower(6f);
 		craftTime = 30;
 		requirements = ItemStack.with(Items.copper, 100, Items.lead, 80, Items.silicon, 150, Items.titanium, 80, Items.metaglass, 80);
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
-		consumeItems(with(Items.coal, 2));
+		consumeItems(with(Items.graphite, 1, Items.silicon, 1));
 		
 	}};
 	//超导体构建厂
-	public GenericCrafter 超导体构建厂 = new GenericCrafter("超导体构建厂") {{
+	public GenericCrafter 超导体构建厂 = new GenericCrafter("超导体构造厂") {{
+		size = 3;
 		consumePower(8f);
 		craftTime = 30;
 		requirements = ItemStack.with(Items.copper, 150, Items.lead, 100, Items.silicon, 250, Items.titanium, 150, Items.metaglass, 150);
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
-		consumeItems(with(Items.surgeAlloy, 2, Items.phaseFabric, 2));
+		consumeItems(with(Items.surgeAlloy, 1, Items.phaseFabric, 1));
 		
 	}};
 	public UpgradeProds u = new UpgradeProds();
@@ -66,6 +68,7 @@ public class T1Prods extends LayerProvider {
 	public GenericCrafter 超导相位物厂 = u.new UpgradeProd("超导相位物厂")
 		.input(with(Items.sand, 3, Items.thorium, 2))
 		.output(new ItemStack(Items.phaseFabric, 2))
+		.speed(60)
 		.size(3)
 		.power(8f)
 		.multiplier(4f)
@@ -74,12 +77,14 @@ public class T1Prods extends LayerProvider {
 	public GenericCrafter 超导石墨厂 = u.new UpgradeProd("超导石墨厂")
 		.input(with(Items.coal, 2))
 		.output(new ItemStack(Items.graphite, 3))
+		.speed(42)
 		.power(5)
 		.multiplier(2.75f)
 		.t(UpgradeProds.type.t1)
 		.block();
 	public GenericCrafter 超导塑钢厂 = u.new UpgradeProd("超导塑钢厂")
 		.input(with(Items.titanium, 2, Items.coal, 2))
+		.speed(50)
 		.size(3)
 		.output(new ItemStack(Items.plastanium, 2))
 		.power(8)
@@ -88,7 +93,8 @@ public class T1Prods extends LayerProvider {
 		.block();
 	public GenericCrafter 超导合金厂 = u.new UpgradeProd("超导合金厂")
 		.input(with(Items.titanium, 2, Items.silicon, 2, Items.copper, 2, Items.lead, 2))
-		.size(3)
+		.speed(60)
+		.size(4)
 		.output(new ItemStack(Items.surgeAlloy, 2))
 		.power(8.5f)
 		.multiplier(4.2f)
@@ -97,6 +103,7 @@ public class T1Prods extends LayerProvider {
 	public GenericCrafter 超导硫厂 = u.new UpgradeProd("超导硫厂")
 		.input(with(Items.coal, 2, Items.sporePod, 2))
 		.output(new ItemStack(Items.pyratite, 2))
+		.speed(35)
 		.power(5)
 		.multiplier(2.5f)
 		.t(UpgradeProds.type.t1)
@@ -104,6 +111,7 @@ public class T1Prods extends LayerProvider {
 	public GenericCrafter 超导爆炸厂 = u.new UpgradeProd("超导爆炸厂")
 		.input(with(Items.sporePod, 2, Items.coal, 2, Items.sand, 2))
 		.output(new ItemStack(Items.blastCompound, 2))
+		.speed(40)
 		.power(10)
 		.multiplier(2.5f)
 		.t(UpgradeProds.type.t1)
@@ -111,6 +119,7 @@ public class T1Prods extends LayerProvider {
 	public GenericCrafter 超导冷冻液厂 = u.new UpgradeProd("超导冷冻液厂")
 		.input(with(Items.titanium, 2))
 		.inputLiquid(new LiquidStack(Liquids.water, 1))
+		.size(2)
 		.outputLiquid(new LiquidStack(Liquids.cryofluid, 5))
 		.power(6)
 		.multiplier(2.75f)

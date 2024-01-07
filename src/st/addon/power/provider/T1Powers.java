@@ -1,5 +1,6 @@
 package st.addon.power.provider;
 
+import arc.graphics.Color;
 import layer.annotations.Import;
 import layer.annotations.Provider;
 import layer.annotations.Require;
@@ -27,7 +28,7 @@ public class T1Powers extends LayerProvider {
 	@Require(cls = PowerPreset.class)
 	PowerPreset preset;
 	//生物质发电机 孢子夹 300(1.5s)
-	public ConsumeGenerator t1生物质 = new ConsumeGenerator("t1生物质发电机") {{
+	public ConsumeGenerator 生物质 = new ConsumeGenerator("t1生物质发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 100, Items.lead, 120, Items.titanium, 60, Items.silicon, 50));
 		size = 2;
 		powerProduction = 300 / 60f;
@@ -39,7 +40,7 @@ public class T1Powers extends LayerProvider {
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//燃煤发电机 煤炭  540(1.5s)
-	public ConsumeGenerator t1煤炭 = new ConsumeGenerator("t1煤炭发电机") {{
+	public ConsumeGenerator 煤炭 = new ConsumeGenerator("t1煤炭发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 80, Items.lead, 100, Items.titanium, 100, Items.silicon, 50));
 		size = 2;
 		powerProduction = 540 / 60f;
@@ -51,7 +52,7 @@ public class T1Powers extends LayerProvider {
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//石油发电机 石油/60 600
-	public ConsumeGenerator t1石油 = new ConsumeGenerator("t1石油发电机") {{
+	public ConsumeGenerator 石油 = new ConsumeGenerator("t1石油发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 150, Items.graphite, 150, Items.lead, 120, Items.metaglass, 100, Items.titanium, 60, Items.silicon, 50, Items.plastanium, 80));
 		size = 2;
 		powerProduction = 600 / 60f;
@@ -63,7 +64,7 @@ public class T1Powers extends LayerProvider {
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//合金发电机 合金 1500(1s)
-	public ConsumeGenerator t1合金 = new ConsumeGenerator("t1合金发电机") {{
+	public ConsumeGenerator 合金 = new ConsumeGenerator("t1合金发电机") {{
 		requirements(Category.power, ItemStack.with(Items.lead, 500, Items.metaglass, 300, Items.graphite, 450, Items.thorium, 150, Items.silicon, 300, Items.surgeAlloy, 100));
 		size = 3;
 		powerProduction = 1500 / 60f;
@@ -76,7 +77,7 @@ public class T1Powers extends LayerProvider {
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//水力发电机 120
-	public ThermalGenerator t1水力 = new ThermalGenerator("t1水力发电机") {{
+	public ThermalGenerator 水力 = new ThermalGenerator("t1水力发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 250, Items.lead, 300, Items.titanium, 250, Items.silicon, 200, Items.graphite, 200, Items.plastanium, 250));
 		powerProduction = 120 / 60f;
 		generateEffect = Fx.redgeneratespark;
@@ -87,19 +88,19 @@ public class T1Powers extends LayerProvider {
 		ambientSoundVolume = 0.06f;
 	}};
 	//太阳能发电机 180
-	public SolarGenerator t1太阳能 = new SolarGenerator("t1太阳能发电机") {{
+	public SolarGenerator 太阳能 = new SolarGenerator("t1太阳能发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 200, Items.lead, 300, Items.titanium, 250, Items.silicon, 200, Items.graphite, 200, Items.plastanium, 250));
 		powerProduction = 180 / 60f;
 		size = 2;
 	}};
 	//地热发电机 240
-	public ThermalGenerator t1地热 = new ThermalGenerator("t1地热发电机") {{
+	public ThermalGenerator 地热 = new ThermalGenerator("t1地热发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 100, Items.lead, 300, Items.titanium, 250, Items.silicon, 200, Items.graphite, 200, Items.plastanium, 250));
 		powerProduction = 240 / 60f;
 		size = 2;
 	}};
 	//核能发电机 钍(1.5s) 水(16) 1080
-	public NuclearReactor t1核能 = new NuclearReactor("t1核能发电机") {{
+	public NuclearReactor 核能 = new NuclearReactor("t1核能发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 150, Items.lead, 200, Items.titanium, 150, Items.silicon, 100, Items.graphite, 100, Items.plastanium, 150));
 		ambientSound = Sounds.hum;
 		ambientSoundVolume = 0.24f;
@@ -122,18 +123,38 @@ public class T1Powers extends LayerProvider {
 
 	*/
 	
+	//激光节点
+	public BeamNode 激光节点 = new BeamNode("t1激光节点") {{
+		size = 1;
+		laserColor2 = Color.rgb(255,255,200);
+		consumesPower = outputsPower = true;
+		range = 24;
+		fogRadius = 5;
+		consumePowerBuffered(4000f);
+		requirements(Category.power,ItemStack.with(Items.silicon,15,Items.titanium,15));
+	}};
+	//激光节点
+	public Battery 电池 = new Battery("t1电池") {{
+		size = 1;
+		consumePowerBuffered(100000f);
+		baseExplosiveness = 5f;
+		requirements(Category.power,ItemStack.with(Items.silicon,100,Items.titanium,50,Items.copper,150,Items.lead,50));
+	}};
+	
 	@Override
 	public void run() {
 		//合金
 		preset
-			.inject(t1生物质)
-			.inject(t1煤炭)
-			.inject(t1石油)
-			.inject(t1水力)
-			.inject(t1合金)
-			.inject(t1太阳能)
-			.inject(t1地热)
-			.inject(t1核能)
+			.inject(生物质)
+			.inject(煤炭)
+			.inject(石油)
+			.inject(水力)
+			.inject(合金)
+			.inject(太阳能)
+			.inject(地热)
+			.inject(核能)
+			.inject(激光节点)
+			.inject(电池)
 		;
 	}
 }
