@@ -22,7 +22,7 @@ public class ProdPreset extends LayerProvider {
 	
 	public ProdPreset inject(GenericCrafter b, int level) {
 		values.health(b);
-		b.category = Category.production;
+		b.category = Category.crafting;
 		b.buildVisibility = BuildVisibility.shown;
 		tooltip
 			.tooltip(b.stats)

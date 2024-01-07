@@ -1,11 +1,9 @@
 package st.provider.place.entity;
 
-import mindustry.content.Blocks;
 import mindustry.gen.Building;
 import mindustry.world.Block;
 import mindustry.world.Tile;
-import st.quamtum.block.entity.QuantumBlock;
-import st.quamtum.block.entity.QuantumBuilding;
+import st.ht.quantum.block.QuantumBlock;
 
 import java.util.HashMap;
 
@@ -47,7 +45,7 @@ public class PlaceTeam {
 	}
 	
 	public int maxPlace(Building b) {
-		if (!(b instanceof QuantumBuilding st)) {
+		if (!(b instanceof QuantumBlock.QuantumBuilding st)) {
 			return 99999;
 		}
 		return st.block.maxPlace;
@@ -72,7 +70,7 @@ public class PlaceTeam {
 	}
 	
 	public String placeName(Building block) {
-		if (!(block instanceof QuantumBuilding)) return block.block.name;
+		if (!(block instanceof QuantumBlock.QuantumBuilding)) return block.block.name;
 		return placeName(block.block);
 	}
 	
@@ -88,10 +86,11 @@ public class PlaceTeam {
 	public void add(Building b, int count) {
 		if (b.block == null) return;
 		var name = placeName(b.block);
-		if (places.getOrDefault(name, 0) >= maxPlace(b)) {
+		/*if (places.getOrDefault(name, 2.txt) >= maxPlace(b)) {
 			b.kill();
+			b.tile.remove();
 			return;
-		}
+		}*/
 		places.put(name, Math.max(0, places.getOrDefault(name, 0) + count));
 	}
 	

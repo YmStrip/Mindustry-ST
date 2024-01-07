@@ -1,19 +1,16 @@
 package st.addon.power.provider;
 
+import arc.graphics.Color;
 import layer.annotations.Import;
 import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
-import mindustry.content.Blocks;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.content.Liquids;
 import mindustry.gen.Sounds;
-import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import mindustry.world.blocks.power.ConsumeGenerator;
-import mindustry.world.blocks.power.ImpactReactor;
-import mindustry.world.blocks.power.ThermalGenerator;
+import mindustry.world.blocks.power.*;
 import mindustry.world.consumers.ConsumeItemExplode;
 import mindustry.world.consumers.ConsumeItemFlammable;
 import mindustry.world.draw.DrawDefault;
@@ -39,29 +36,29 @@ public class T2Powers extends LayerProvider {
 	@Require(cls = PowerPreset.class)
 	PowerPreset preset;
 	//反物质(2s) 12k
-	public ImpactReactor t2反物质 = new ImpactReactor("t2反物质发电机") {{
-		size = 4;
+	public ImpactReactor 反物质 = new ImpactReactor("t2反物质发电机") {{
+		size = 3;
 		powerProduction = 12000 / 60f;
 		itemDuration = 60f * 2;
 		ambientSound = Sounds.pulse;
 		ambientSoundVolume = 0.07f;
 		consumePower(1320 / 60f);
-		consumeLiquid(Liquids.cryofluid, 0.25f);
+		consumeLiquid(Liquids.water, 0.25f);
 		drawer = new DrawMulti(new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//水(120/s) 14k-1.2k
-	public ImpactReactor t2水聚变 = new ImpactReactor("t2水聚变发电机") {{
+	public ImpactReactor 水聚变 = new ImpactReactor("t2水聚变发电机") {{
 		canOverdrive = false;
 		size = 4;
 		powerProduction = 6000 / 60f;
 		ambientSound = Sounds.pulse;
 		ambientSoundVolume = 0.07f;
 		consumePower(1200 / 60f);
-		consumeLiquid(Liquids.cryofluid, 2f);
+		consumeLiquid(Liquids.water, 2f);
 		drawer = new DrawMulti(new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//流沙发电机 600
-	public ThermalGenerator t2流沙 = new ThermalGenerator("t2流沙发电机") {{
+	public ThermalGenerator 流沙 = new ThermalGenerator("t2流沙发电机") {{
 		canOverdrive = false;
 		powerProduction = 600 / 60f;
 		generateEffect = Fx.redgeneratespark;
@@ -72,8 +69,8 @@ public class T2Powers extends LayerProvider {
 		ambientSoundVolume = 0.06f;
 		attribute = Attribute.oil;
 	}};
-	//等离子发电机 x(5s) 2.4k (火力发电)
-	public ConsumeGenerator t2等离子 = new ConsumeGenerator("t2等离子发电机") {{
+	//等离子发电机 x(5s) 2.txt.4k (火力发电)
+	public ConsumeGenerator 等离子 = new ConsumeGenerator("t2等离子发电机") {{
 		size = 3;
 		powerProduction = 2400 / 60f;
 		itemDuration = 60 * 5;
@@ -84,8 +81,8 @@ public class T2Powers extends LayerProvider {
 		consume(new ConsumeItemExplode());
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
-	//反重力(30s) 3k
-	public ConsumeGenerator t2引力波 = new ConsumeGenerator("t2引力波发电机") {{
+	//反重力(60s) 3k
+	public ConsumeGenerator 引力波 = new ConsumeGenerator("t2引力波发电机") {{
 		size = 3;
 		powerProduction = 3000 / 60f;
 		itemDuration = 60 * 30;
@@ -95,7 +92,7 @@ public class T2Powers extends LayerProvider {
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
 	//辐矿石(4s) 24k
-	public ImpactReactor t2辐矿石 = new ImpactReactor("t2辐矿石发电机") {{
+	public ImpactReactor 辐矿石 = new ImpactReactor("t2辐矿石发电机") {{
 		size = 4;
 		powerProduction = 24000 / 60f;
 		itemDuration = 60f * 4;
@@ -104,39 +101,66 @@ public class T2Powers extends LayerProvider {
 		consumePower(1320 / 60f);
 		drawer = new DrawMulti(new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion());
 	}};
+	//激光节点
+	public BeamNode 激光节点 = new BeamNode("t2激光节点") {{
+		size = 1;
+		laserColor2 = Color.rgb(200,255,255);
+		consumesPower = outputsPower = true;
+		range = 60;
+		fogRadius = 10;
+		consumePowerBuffered(12000f);
+	}};
+	//激光节点
+	public Battery 电池 = new Battery("t2电池") {{
+		size = 1;
+		consumePowerBuffered(400000f);
+		baseExplosiveness = 10f;
+	}};
 	
 	@Override
 	public void run() {
 		//反物质
 		{
-			t2反物质.requirements = ItemStack.with(Items.silicon, 60, items.纳米碳管, 50, items.晶金, 100, items.超导体, 50, items.铬纳尔, 150);
-			t2反物质.consumeItem(items.反物质);
-			preset.inject(t2反物质,2);
+			反物质.requirements = ItemStack.with(Items.silicon, 60, items.纳米碳管, 50, items.晶金, 100, items.超导体, 50, items.铬纳尔, 150);
+			反物质.consumeItem(items.反物质);
+			preset.inject(反物质, 2);
 		}
 		//水聚变
 		{
-			t2水聚变.requirements = ItemStack.with(Items.silicon, 1000, items.纳米碳管, 350, items.晶金, 300, items.超导体, 500, items.铬纳尔, 500);
-			preset.inject(t2水聚变,2);
+			水聚变.requirements = ItemStack.with(Items.silicon, 1000, items.纳米碳管, 350, items.晶金, 300, items.超导体, 500, items.铬纳尔, 500);
+			preset.inject(水聚变, 2);
 		}
 		//流沙
 		{
-			t2流沙.requirements = ItemStack.with(Items.silicon, 100, items.纳米碳管, 50, items.超导体, 50, items.铬纳尔, 50);
-			preset.inject(t2流沙,2);
+			流沙.requirements = ItemStack.with(Items.silicon, 100, items.纳米碳管, 50, items.超导体, 50, items.铬纳尔, 50);
+			preset.inject(流沙, 2);
 		}
 		//等离子
 		{
-			t2等离子.requirements = ItemStack.with(Items.silicon, 250, items.纳米碳管, 50, items.晶金, 100, items.超导体, 50, items.铬纳尔, 150);
-			preset.inject(t2等离子,2);
+			等离子.requirements = ItemStack.with(Items.silicon, 250, items.纳米碳管, 50, items.晶金, 100, items.超导体, 50, items.铬纳尔, 150);
+			preset.inject(等离子, 2);
 		}
 		//引力波
 		{
-			t2引力波.requirements = ItemStack.with(Items.silicon, 1000, items.纳米碳管, 750, items.晶金, 500, items.超导体, 500, items.铬纳尔, 750);
-			preset.inject(t2引力波,2);
+			引力波.requirements = ItemStack.with(Items.silicon, 1000, items.纳米碳管, 750, items.晶金, 500, items.超导体, 500, items.铬纳尔, 750);
+			引力波.consumeItem(items.反重力陶瓷);
+			preset.inject(引力波, 2);
 		}
 		//辐矿石
 		{
-			t2辐矿石.requirements = ItemStack.with(Items.silicon, 1250, items.纳米碳管, 850, items.晶金, 650, items.超导体, 700, items.铬纳尔, 850);
-			preset.inject(t2辐矿石,2);
+			辐矿石.requirements = ItemStack.with(Items.silicon, 1250, items.纳米碳管, 850, items.晶金, 650, items.超导体, 700, items.铬纳尔, 850);
+			辐矿石.consumeItem(items.辐矿石);
+			preset.inject(辐矿石, 2);
+		}
+		//激光节点
+		{
+			激光节点.requirements = ItemStack.with(items.超导体, 5, items.纳米碳管, 10, Items.silicon, 20);
+			preset.inject(激光节点, 2);
+		}
+		//电池
+		{
+			电池.requirements = ItemStack.with(items.超导体, 50, items.纳米碳管, 100, Items.silicon, 150);
+			preset.inject(电池, 2);
 		}
 	}
 }

@@ -5,6 +5,7 @@ import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
 import mindustry.type.Category;
+import mindustry.world.Block;
 import mindustry.world.blocks.power.PowerGenerator;
 import mindustry.world.meta.BuildVisibility;
 import st.addon.content.SContent;
@@ -20,11 +21,11 @@ public class PowerPreset extends LayerProvider {
 	@Require(cls = ValueProvider.class)
 	ValueProvider values;
 	
-	public PowerPreset inject(PowerGenerator b) {
+	public PowerPreset inject(Block b) {
 		return inject(b, 1);
 	}
 	
-	public PowerPreset inject(PowerGenerator b, int level) {
+	public PowerPreset inject(Block b, int level) {
 		values.health(b);
 		b.category = Category.power;
 		b.buildVisibility = BuildVisibility.shown;

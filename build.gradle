@@ -13,8 +13,8 @@ repositories {
 dependencies {
     implementation files("C:\\Users\\YmStrip\\Desktop\\code\\java-util\\layer\\lib\\build\\libs\\lib.jar");
     implementation group: 'org.fusesource.jansi', name: 'jansi', version: '1.11'
-    implementation 'org.mapdb:mapdb:3.0.10'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+
 }
 
 java {
@@ -76,7 +76,7 @@ task jarAndroid {
 }
 
 jar {
-    //莫名其妙？
+    //处理抽风问题
     exclude 'META-INF/ECLIPSE_.RSA'
     exclude 'META-INF/ECLIPSE_.SF'
     duplicatesStrategy = 'exclude'
@@ -93,14 +93,14 @@ jar {
     from("assets/") {
         include "**"
     }
-    from("bundles/") {
+    /*from("bundles/") {
         include "**"
         into("bundles")
     }
     from("content/") {
         include "**"
         into("content")
-    }
+    }*/
     doLast {
         copy {
             from("$buildDir/libs")
