@@ -4,9 +4,7 @@ import layer.annotations.Import;
 import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
-import mindustry.type.Category;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.ForceProjector;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.world.meta.BuildVisibility;
 import st.addon.content.SContent;
@@ -26,11 +24,7 @@ public class EffectPreset extends LayerProvider {
 	
 	public STooltipBuilder inject(Block b, int level) {
 		b.buildVisibility = BuildVisibility.shown;
-		b.category = Category.effect;
 		values.health(b);
-		if (b instanceof ForceProjector f) {
-			values.shield(f);
-		}
 		if (b instanceof CoreBlock) b.health = b.health * 5;
 		return tooltip
 			.tooltip(b.stats)

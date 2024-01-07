@@ -42,15 +42,11 @@ public class PlaceProvider extends LayerProvider {
 	public void load() {
 		_team_ = new PlaceTeam();
 		teams.clear();
-		var is = new HashMap<String,Boolean>();
 		for (var i = 0; i < 20; ++i) {
 			teams.put(i + "", new PlaceTeam());
 		}
-		
 		for (var i : Vars.world.tiles) {
 			if (i == null || i.build == null) continue;
-			if (is.get(i.build.id+"")!=null) continue;
-			is.put(i.build.id+"",true);
 			//计数
 			var name = PlaceTeam.placeName(i.build.block);
 			if (!PlaceTeam.isSetMaxBlock(name)) return;

@@ -1,0 +1,21 @@
+{
+  "name": "水元素墙"
+  "description": ""
+  "type": "Wall"
+  "health": 600
+  "size": 1
+  //反弹 0f ~ 100f
+  "chanceDeflect": 5
+  //绝缘的
+  "insulated": false
+  //吸收激光
+  "absorbLasers": true
+  "requirements": [
+    {
+      "item": "水元素"
+      "amount": 6
+    }
+  ]
+  "category": "defense"
+  "research": "木元素墙"
+}

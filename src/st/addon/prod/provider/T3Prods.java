@@ -23,7 +23,6 @@ public class T3Prods extends LayerProvider {
 		
 		public fc(String name) {
 			super(name);
-			size = 5;
 			craftTime = 30;
 			craftEffect = Fx.smeltsmoke;
 			consumePower(50f);
@@ -46,13 +45,13 @@ public class T3Prods extends LayerProvider {
 		金元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.超导体, 2));
 		金元素构造厂.outputItem = new ItemStack(items.金元素, 3);
 		金元素构造厂.req();
-		木元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.辐矿石, 2));
+		木元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.铬纳尔, 2));
 		木元素构造厂.outputItem = new ItemStack(items.木元素, 3);
 		木元素构造厂.req();
 		水元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.晶金, 2));
 		水元素构造厂.outputItem = new ItemStack(items.水元素, 3);
 		水元素构造厂.req();
-		火元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.铬纳尔, 2));
+		火元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.辐矿石, 2));
 		火元素构造厂.outputItem = new ItemStack(items.火元素, 3);
 		火元素构造厂.req();
 		土元素构造厂.consumeItems(ItemStack.with(items.反物质, 2, items.反重力陶瓷, 2));

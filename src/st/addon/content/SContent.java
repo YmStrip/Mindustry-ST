@@ -4,7 +4,7 @@ import layer.annotations.Module;
 import layer.instance.InstanceFactory;
 import layer.layer.Logger;
 import layer.module.LayerModule;
-import st.addon.content.controller.ItemTech;
+import st.addon.content.controller.AttrController;
 import st.addon.content.controller.ItemToolBar;
 import st.addon.content.provider.*;
 
@@ -13,10 +13,9 @@ public class SContent extends LayerModule {
 	public SContent() {
 		controller(
 			new ItemToolBar(),
-			new ItemTech()
+			new AttrController()
 		);
 		provider(
-			new UIProvider(),
 			new ValueProvider(),
 			new TooltipProvider(),
 			new TechProvider(),

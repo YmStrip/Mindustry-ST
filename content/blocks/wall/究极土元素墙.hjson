@@ -1,0 +1,21 @@
+{
+  "name": "究极土元素墙"
+  "description": ""
+  "type": "Wall"
+  "health": 1100000
+  "size": 2
+  //反弹 0f ~ 100f
+  "chanceDeflect": -1
+  //绝缘的
+  "insulated": false
+  //吸收激光
+  "absorbLasers": false
+  "requirements": [
+    {
+      "item": "土元素"
+      "amount": 1500
+    }
+  ]
+  "category": "defense"
+  "research": "大型土元素墙"
+}

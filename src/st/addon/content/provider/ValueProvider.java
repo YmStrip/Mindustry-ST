@@ -2,16 +2,14 @@ package st.addon.content.provider;
 
 import layer.annotations.Provider;
 import layer.extend.LayerProvider;
-import mindustry.content.Blocks;
 import mindustry.type.UnitType;
 import mindustry.world.Block;
-import mindustry.world.blocks.defense.ForceProjector;
 import mindustry.world.blocks.defense.turrets.Turret;
 import st.addon.content.entity.StItem;
 
 @Provider
 public class ValueProvider extends LayerProvider {
-	//伤害*c->防御力 log(health)/log(2.txt)
+	//伤害*c->防御力 log(health)/log(2)
 	public float armor(float damage, float count) {
 		return (float) (Math.log(health(damage, count)) / Math.log(2));
 	}
@@ -32,44 +30,14 @@ public class ValueProvider extends LayerProvider {
 		}
 	}
 	
-	//伤害*c->护盾值
-	public float shield(float damage, float count) {
-		return health(damage, count) * 5;
-	}
-	
-	public void shield(ForceProjector t) {
-		var health = 100f;
-		for (var i : t.requirements) {
-			if (i.item instanceof StItem si) {
-				health += (int) health(si.damage, i.amount);
-			} else {
-				health += (int) health(i.item.cost * 100 + 1, i.amount);
-			}
-		}
-		t.shieldHealth = (int) health * 5;
-	}
-	
 	//伤害*c->生命值
 	public float health(float damage, float count) {
 		return (float) (damage * 0.1 * (1 + Math.log(count) / Math.log(100)) * (1 + Math.log(count) / Math.log(5000)));
 	}
 	
 	public void health(Block t) {
-		var health = 100f + Math.pow(t.size * t.size * Math.max(t.scaledHealth, 10), 1 / 1.25f);
-		for (var i : t.requirements) {
-			if (i.item instanceof StItem si) {
-				health += (int) health(si.damage, i.amount);
-			} else {
-				health += (int) health(i.item.cost * 100 + 1, i.amount);
-			}
-		}
-		t.health = (int) health;
-	}
-	public void health(UnitType t) {
 		var health = 100f;
-		var d = t.getFirstRequirements();
-		if (d==null) return;
-		for (var i : d) {
+		for (var i : t.requirements) {
 			if (i.item instanceof StItem si) {
 				health += (int) health(si.damage, i.amount);
 			} else {
@@ -81,7 +49,7 @@ public class ValueProvider extends LayerProvider {
 	
 	//伤害*c->流体倍率
 	public float liquidMultiplier(float damage, float count) {
-		//设计一个数学函数，f(a,b)，其中a代表伤害，值域[2.txt,无穷大]，b代表数量，[2.txt,无穷大)，f最大值1.99，最小值1.01，当b零点时，f最小值1.01，当b无穷大时，f1.99，其中b从左到右单调递减，a影响平滑度，但是不影响值域
+		//设计一个数学函数，f(a,b)，其中a代表伤害，值域[0,无穷大]，b代表数量，[0,无穷大)，f最大值1.99，最小值1.01，当b零点时，f最小值1.01，当b无穷大时，f1.99，其中b从左到右单调递减，a影响平滑度，但是不影响值域
 		//e的-x次方
 		//f(a,b) = 1.01 + (1.99 - 1.01) * e^(-a/b) ，修正 a = count b = damage
 		return (float) (1.01 + (1.99 - 1.01) * Math.pow(Math.E, (-count / damage)));

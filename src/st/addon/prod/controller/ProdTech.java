@@ -5,11 +5,9 @@ import layer.annotations.Controller;
 import layer.annotations.Import;
 import layer.annotations.Require;
 import layer.extend.LayerController;
+import mindustry.content.Blocks;
 import mindustry.game.EventType;
-import mindustry.game.Objectives;
 import st.addon.content.SContent;
-import st.addon.content.provider.ItemProvider;
-import st.addon.content.provider.LiquidProvider;
 import st.addon.content.provider.TechProvider;
 import st.addon.prod.provider.T1Prods;
 import st.addon.prod.provider.T2Prods;
@@ -26,15 +24,14 @@ public class ProdTech extends LayerController {
 	T3Prods t3;
 	@Require(cls = T4Prods.class)
 	T4Prods t4;
-	
 	@Import(cls = SContent.class)
 	@Require(cls = TechProvider.class)
 	TechProvider tech;
 	
-	public void tech_mod() {
+	public void inject_mod() {
 		tech
 			.tech(t1.纳米碳管构建厂)
-			.parent(tech.root)
+			.parent(Blocks.siliconSmelter)
 			.child(t1.超导体构建厂, c -> c
 				.child(t1.超导石墨厂, x -> x
 					.inChild(t1.超导玻璃厂)
@@ -64,7 +61,7 @@ public class ProdTech extends LayerController {
 	@Override
 	public void run() {
 		Events.on(EventType.ContentInitEvent.class, t -> {
-			tech_mod();
+			inject_mod();
 		});
 	}
 }

@@ -5,7 +5,6 @@ import mindustry.type.Item;
 public class StItem extends Item {
 	public StItem(String name) {
 		super(name);
-		alwaysUnlocked = false;
 	}
 	
 	public boolean isInit = false;

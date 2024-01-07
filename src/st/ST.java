@@ -1,46 +1,22 @@
 package st;
 
 
-import arc.Core;
 import layer.module.ModuleFactory;
-import st.addon.turret.STurret;
-import st.addon.unit.SUnit;
-import st.provider.attack.SAttack;
-import st.addon.drill.SDrill;
+import st.addon.attack.SAttack;
 import st.addon.effect.SEffect;
 import st.addon.prod.SProd;
+import st.quamtum.block.QuantumB;
 import st.addon.content.SContent;
 import st.addon.power.SPower;
-import st.addon.stransport.STransport;
-import st.addon.wall.SWall;
-import st.ht.console.SConsole;
-import st.plot.Story;
+import st.provider.story.Story;
+import st.provider.ui.UI;
+import st.provider.command.Command;
 import st.provider.place.SPlace;
-import st.ht.quantum.Quantum;
+import st.quamtum.provider.Quantum;
 import st.provider.shop.Shop;
 
 public class ST {
 	public static String name = "st";
-	
-	public static String name(String n) {
-		return Core.bundle.get(name + "-" + n);
-	}
-	
-	public static String name(String type, String n) {
-		return Core.bundle.get(type + "." + name + "-" + n);
-	}
-	public static String stat(String name) {
-		return name("stat",name);
-	}
-	public static String item(String name) {
-		return name("item",name);
-	}
-	public static String stage(String name) {
-		return name("stage",name);
-	}
-	public static String block(String name) {
-		return name("block",name);
-	}
 	public static boolean debug = true;
 	public static ModuleFactory module;
 	
@@ -50,21 +26,18 @@ public class ST {
 				//附加内容
 				new SPlace(),
 				new Shop(),
-				new SConsole(),
-				new SAttack(),
+				new UI(),
+				new Command(),
 				//效果
 				//量子网络
+				new QuantumB(),
 				new Quantum(),
 				//内容
 				new Story(),
-				new SUnit(),
-				new SWall(),
-				new STurret(),
-				new STransport(),
-				new SDrill(),
 				new SEffect(),
 				new SProd(),
 				new SPower(),
+				new SAttack(),
 				new SContent()
 			)
 			.deploy()

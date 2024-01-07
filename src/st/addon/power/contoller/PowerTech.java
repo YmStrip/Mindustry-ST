@@ -5,6 +5,7 @@ import layer.annotations.Controller;
 import layer.annotations.Import;
 import layer.annotations.Require;
 import layer.extend.LayerController;
+import mindustry.content.Blocks;
 import mindustry.game.EventType;
 import st.addon.content.SContent;
 import st.addon.power.provider.T1Powers;
@@ -26,34 +27,24 @@ public class PowerTech extends LayerController {
 	
 	public void inject_mod() {
 		tech
-			.tech(t1.激光节点)
-			.parent(tech.root)
-			.inChild(t2.激光节点)
-		;
-		tech
-			.tech(t1.电池)
-			.parent(tech.root)
-			.inChild(t2.电池)
-			.inChild(t3.电池);
-		tech
-			.tech(t1.生物质)
-			.parent(tech.root)
-			.child(t1.太阳能, x -> x
-				.inChild(t1.地热)
-				.inChild(t1.水力))
-			.child(t1.煤炭, x -> x
-				.inChild(t1.石油)
-				.inChild(t1.核能)
-				.child(t1.合金, _0 -> _0
-					.child(t2.流沙)
-					.child(t2.反物质, _1 -> _1
-						.child(t2.引力波)
-						.inChild(t2.等离子)
-						.child(t2.水聚变))
-					.child(t2.辐矿石, x1 -> x1
-						.child(t3.木元素, x2 -> x2
-							.child(t3.光元素))
-						.inChild(t3.零点矩阵)
+			.tech(t1.t1生物质)
+			.parent(Blocks.combustionGenerator)
+			.child(t1.t1太阳能, x -> x
+				.inChild(t1.t1地热)
+				.inChild(t1.t1水力))
+			.child(t1.t1煤炭, x -> x
+				.inChild(t1.t1石油)
+				.inChild(t1.t1核能)
+				.child(t1.t1合金, _0 -> _0
+					.child(t2.t2流沙)
+					.child(t2.t2反物质, _1 -> _1
+						.child(t2.t2引力波)
+						.inChild(t2.t2等离子)
+						.child(t2.t2水聚变))
+					.child(t2.t2辐矿石, x1 -> x1
+						.child(t3.t3金元素, x2 -> x2
+							.child(t3.t3光元素))
+						.inChild(t3.t3零点矩阵)
 						.child(t3.t3暗能量矩阵))
 				))
 		

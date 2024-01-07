@@ -1,0 +1,86 @@
+{
+  "name": "纳米元素构造厂"
+  "type": "UnitFactory"
+  "description": "生产基础纳米元素单位"
+  "size": 3
+  "buildCostMultiplier": 100
+  "requirements": [
+    {
+      "item": "金元素"
+      "amount": 50
+    }
+    {
+      "item": "木元素"
+      "amount": 50
+    }
+    {
+      "item": "水元素"
+      "amount": 500
+    }
+    {
+      "item": "火元素"
+      "amount": 50
+    }
+    {
+      "item": "土元素"
+      "amount": 200
+    }
+  ]
+  "plans": [
+    {
+      "unit": "金-t1"
+      "requirements": [
+        {
+          "item": "金元素"
+          "amount": 100
+        }
+      ]
+      "time": 900
+    }
+    {
+      "unit": "木-t1"
+      "requirements": [
+        {
+          "item": "木元素"
+          "amount": 100
+        }
+      ]
+      "time": 900
+    }
+    {
+      "unit": "水-t1"
+      "requirements": [
+        {
+          "item": "水元素"
+          "amount": 100
+        }
+      ]
+      "time": 900
+    }
+    {
+      "unit": "火-t1"
+      "requirements": [
+        {
+          "item": "火元素"
+          "amount": 100
+        }
+      ]
+      "time": 900
+    }
+    {
+      "unit": "土-t1"
+      "requirements": [
+        {
+          "item": "土元素"
+          "amount": 100
+        }
+      ]
+      "time": 900
+    }
+  ]
+  "consumes": {
+    "power": 5
+  }
+  "category": "units"
+  "research": "ground-factory"
+}

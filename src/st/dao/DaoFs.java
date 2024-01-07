@@ -1,4 +1,7 @@
 package st.dao;
 
-public class DaoFs {
+import layer.annotations.LayerClass;
+
+@LayerClass
+public class DaoFs<T> extends Dao<T> {
 }

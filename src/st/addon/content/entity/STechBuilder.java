@@ -3,10 +3,7 @@ package st.addon.content.entity;
 import mindustry.content.TechTree;
 import mindustry.ctype.UnlockableContent;
 import mindustry.game.Objectives;
-import mindustry.type.Item;
 import mindustry.type.ItemStack;
-import mindustry.type.Liquid;
-import mindustry.world.Block;
 
 public class STechBuilder {
 	public TechTree.TechNode tech;
@@ -14,22 +11,9 @@ public class STechBuilder {
 	public UnlockableContent parent;
 	
 	public STechBuilder parent(UnlockableContent item) {
-		if (content instanceof Block b) {
-			if (b.researchCostMultiplier <= 0) b.researchCostMultiplier = 1;
-			/*b.researchCost = null;
-			System.out.println(content + " " + content.getClass() + " " + b.requirements.length + " " + b.researchCostMultipliers + " " + b.researchRequirements());*/
-		}
-		
-		/*for (var i : content.researchRequirements()) {
-			//System.out.println(content + " " + i.toString());
-		}*/
-		
 		parent = item;
 		new TechTree.TechNode(item.techNode, content, content.researchRequirements());
 		tech = item.techNode;
-		if ((content instanceof Item) || (content instanceof Liquid)) {
-			req(new Objectives.Produce(content));
-		}
 		return this;
 	}
 	
