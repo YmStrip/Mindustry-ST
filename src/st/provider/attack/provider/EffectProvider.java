@@ -60,40 +60,46 @@ public class EffectProvider extends LayerProvider {
 	}
 	
 	public Effect 轨道(Color 亮色, Color 暗色) {
+		return 轨道(亮色, 暗色, 15);
+	}
+	
+	public Effect 轨道(Color 亮色, Color 暗色, float width) {
 		return new Effect(30, e -> {
 			for (int i = 0; i < 2; i++) {
 				color(i == 0 ? 白色 : 亮色);
 				float m = i == 0 ? 1f : 0.5f;
 				
 				float rot = e.rotation + 180f;
-				float w = 15f * e.fout() * m;
-				Drawf.tri(e.x, e.y, w, (30f + Mathf.randomSeedRange(e.id, 15f)) * m, rot);
-				Drawf.tri(e.x, e.y, w, 10f * m, rot + 180f);
+				float w = width * e.fout() * m;
+				Drawf.tri(e.x, e.y, w, (30f + Mathf.randomSeedRange(e.id, width)) * m, rot);
+				Drawf.tri(e.x, e.y, w, width * 0.666f * m, rot + 180f);
 			}
 			
 			Drawf.light(e.x, e.y, 60f, 暗色, 0.6f * e.fout());
 		});
 	}
-	
-	public Effect 发射(Color 亮色, Color 暗色) {
+
+	public Effect 发射(Color 亮色, Color 暗色,float width) {
 		return new Effect(24f, e -> {
 			e.scaled(10f, b -> {
 				color(亮色, 暗色, b.fin());
 				stroke(b.fout() * 3f + 0.2f);
-				Lines.circle(b.x, b.y, b.fin() * 50f);
+				Lines.circle(b.x, b.y, b.fin() * width*2);
 			});
 			
 			color(亮色);
 			
 			for (int i : Mathf.signs) {
-				Drawf.tri(e.x, e.y, 13f * e.fout(), 85f, e.rotation + 90f * i);
-				Drawf.tri(e.x, e.y, 13f * e.fout(), 50f, e.rotation + 20f * i);
+				Drawf.tri(e.x, e.y, 13f * e.fout(), width*3, e.rotation + 90f * i);
+				Drawf.tri(e.x, e.y, width/2 * e.fout(), width*2, e.rotation + 20f * i);
 			}
 			
 			Drawf.light(e.x, e.y, 180f, 暗色, 0.9f * e.fout());
 		});
 	}
-	
+	public Effect 发射(Color 亮色, Color 暗色) {
+		return 发射(亮色,暗色,23);
+	}
 	public Effect 打击烟雾(Color 亮色, Color 暗色) {
 		return new Effect(70, e -> {
 			randLenVectors(e.id, e.fin(), 30, 30f, (x, y, fin, fout) -> {
@@ -103,8 +109,10 @@ public class EffectProvider extends LayerProvider {
 			});
 		});
 	}
-	
-	public Effect 打击(Color 亮色, Color 暗色) {
+	public Effect 打击(Color 亮色, Color 暗色){
+		return 打击(亮色,暗色,23);
+	}
+	public Effect 打击(Color 亮色, Color 暗色,float width) {
 		return new Effect(20f, 200f, e -> {
 			color(暗色);
 			for (int i = 0; i < 2; i++) {
@@ -113,10 +121,10 @@ public class EffectProvider extends LayerProvider {
 				float m = i == 0 ? 1f : 0.5f;
 				
 				for (int j = 0; j < 5; j++) {
-					float rot = e.rotation + Mathf.randomSeedRange(e.id + j, 50f);
-					float w = 23f * e.fout() * m;
-					Drawf.tri(e.x, e.y, w, (80f + Mathf.randomSeedRange(e.id + j, 40f)) * m, rot);
-					Drawf.tri(e.x, e.y, w, 20f * m, rot + 180f);
+					float rot = e.rotation + Mathf.randomSeedRange(e.id + j, width*2);
+					float w = width * e.fout() * m;
+					Drawf.tri(e.x, e.y, w, (width*3 + Mathf.randomSeedRange(e.id + j, width*2)) * m, rot);
+					Drawf.tri(e.x, e.y, w, width*2 * m, rot + 180f);
 				}
 			}
 			

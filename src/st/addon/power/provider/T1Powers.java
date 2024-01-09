@@ -76,10 +76,10 @@ public class T1Powers extends LayerProvider {
 		consumeLiquid(Liquids.cryofluid, 60 / 16f);
 		drawer = new DrawMulti(new DrawDefault(), new DrawWarmupRegion());
 	}};
-	//水力发电机 120
+	//水力发电机60
 	public ThermalGenerator 水力 = new ThermalGenerator("t1水力发电机") {{
 		requirements(Category.power, ItemStack.with(Items.copper, 250, Items.lead, 300, Items.titanium, 250, Items.silicon, 200, Items.graphite, 200, Items.plastanium, 250));
-		powerProduction = 120 / 60f;
+		powerProduction = 60 / 60f;
 		generateEffect = Fx.redgeneratespark;
 		effectChance = 0.011f;
 		size = 2;
@@ -126,23 +126,27 @@ public class T1Powers extends LayerProvider {
 	//激光节点
 	public BeamNode 激光节点 = new BeamNode("t1激光节点") {{
 		size = 1;
-		laserColor2 = Color.rgb(255,255,200);
+		laserColor2 = Color.rgb(255, 255, 200);
 		consumesPower = outputsPower = true;
 		range = 24;
 		fogRadius = 5;
 		consumePowerBuffered(4000f);
-		requirements(Category.power,ItemStack.with(Items.silicon,15,Items.titanium,15));
+		requirements(Category.power, ItemStack.with(Items.silicon, 15, Items.titanium, 15));
 	}};
 	//激光节点
 	public Battery 电池 = new Battery("t1电池") {{
 		size = 1;
 		consumePowerBuffered(100000f);
 		baseExplosiveness = 5f;
-		requirements(Category.power,ItemStack.with(Items.silicon,100,Items.titanium,50,Items.copper,150,Items.lead,50));
+		requirements(Category.power, ItemStack.with(Items.silicon, 100, Items.titanium, 50, Items.copper, 150, Items.lead, 50));
 	}};
 	
 	@Override
 	public void run() {
+		//水利
+		{
+			水力.attribute = attrs.水;
+		}
 		//合金
 		preset
 			.inject(生物质)

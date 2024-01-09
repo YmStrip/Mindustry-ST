@@ -174,27 +174,40 @@ public class QuantumUI extends LayerProvider {
 			config.t.row();
 		}
 		
-		public ArrayList<valueInfo> getItemsList(QuantumNetwork ts, boolean isCore) {
+		public ArrayList<valueInfo> getItemsList(QuantumNetwork ts) {
+			var itemData = new HashMap<String, Float>();
+			var planet = Vars.state.rules.planet;
 			var core = building.core();
 			var data = new ArrayList<valueInfo>();
-			for (var i : Vars.content.items()) {
-				var hasItem = ts.items.get(i.name);
-				if (isCore && core != null && core.items != null) hasItem += core.items.get(i);
-				if (hasItem <= 0) continue;
-				Float finalHasItem = hasItem;
+			if (core != null) for (var i : Vars.content.items()) {
+				itemData.put(i.name, itemData.getOrDefault(i.name, 0f) + core.items.get(i));
+			}
+			if (planet != null) for (var i : planet.sectors) {
+				if (!(i.isAttacked() || i.isCaptured() || i.isBeingPlayed())) continue;
+				for (var j : Vars.content.items()) {
+					itemData.put(j.name, itemData.getOrDefault(j.name, 0f) + i.info.items.get(j));
+				}
+			}
+			for (var i : ts.items.data.entrySet()) {
+				itemData.put(i.getKey(), itemData.getOrDefault(i.getKey(), 0f) + i.getValue());
+			}
+			for (var i0 : itemData.entrySet()) {
+				if (i0.getValue().isNaN() || i0.getValue() <= 0) continue;
+				var i = Vars.content.item(i0.getKey());
+				if (i == null) continue;
 				data.add(new valueInfo() {{
 					lozName = i.localizedName;
 					name = i.name;
 					max = quantumMap.team(building.team.id).itemCapability;
 					icon = i.uiIcon;
-					count = Math.round(finalHasItem);
+					count = Math.round(i0.getValue());
 				}});
 			}
 			return data;
 		}
 		
 		public void renderItemList(Table t, QuantumNetwork ts) {
-			var data = getItemsList(ts, true);
+			var data = getItemsList(ts);
 			var config = new renderListConfig();
 			config.t = t;
 			config.list = data;
@@ -204,7 +217,7 @@ public class QuantumUI extends LayerProvider {
 		}
 		
 		public void renderItemList(Table t, QuantumNetwork ts, HashMap<String, Float> map) {
-			var data = getItemsList(ts, false);
+			var data = getItemsList(ts);
 			var config = new renderListConfig();
 			config.t = t;
 			config.list = data;

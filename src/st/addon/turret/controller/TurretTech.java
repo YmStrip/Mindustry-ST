@@ -30,24 +30,25 @@ public class TurretTech extends LayerController {
 			.parent(techs.root)
 			.child(t1.脉冲)
 			.child(t1.毒刺导弹)
-			.child(t1.超导电磁炮, x -> x
-				.child(t2.质量驱动炮)
-				.child(t2.脉冲发射器, c -> c
-					.child(t2.电力幽灵)
-					.child(t2.光子大炮)
-					.child(t2.正电子冲击波)
+			.child(t1.超导炮, x -> x
+				.child(t1.质量驱动炮)
+				.child(t1.脉冲发射器, c -> c
+					.child(t1.电力幽灵)
+					.child(t1.光子大炮)
+					.child(t1.正电子冲击波)
 				)
-				.child(t2.离子光束)
-				.child(t2.超电磁炮, x1 -> x1
-					.child(t3.高能元素机枪)
-					.child(t3.机械暴徒)
-					.child(t3.高能激光炮, t -> t
-						.child(t3.死光炮)
+				.child(t1.离子光束)
+				.child(t1.超电磁炮, x1 -> x1
+					.child(t2.高能元素机枪)
+					.child(t2.机械暴徒)
+					.child(t2.高能激光炮, t -> t
+						.child(t2.死光炮)
 					)
-					.child(t3.高能电浆炮, t -> t
+					.child(t2.高能电浆炮, t -> t
 						.inChild(t3.微型光粒炮)
 						.inChild(t3.光粒))
-					.child(t3.等离子光束)
+					.child(t2.等离子光束)
+					.child(t3.元点打击)
 					.child(t3.以太爆破, x2 -> x2
 						.inChild(t3.以太黑洞)
 						.child(t3.以太毁灭))

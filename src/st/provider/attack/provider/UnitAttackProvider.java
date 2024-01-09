@@ -1,11 +1,13 @@
 package st.provider.attack.provider;
 
+import arc.audio.Sound;
 import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
 import layer.layer.Logger;
 import mindustry.Vars;
 import mindustry.entities.bullet.BulletType;
+import mindustry.entities.bullet.PointBulletType;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
 import st.ST;
@@ -34,11 +36,23 @@ public class UnitAttackProvider extends LayerProvider {
 	
 	
 	public WeaponPos pos_导弹(float x, float y) {
-		return new WeaponPos("-sei-launcher", x, y);
+		return new WeaponPos(ST.name + "-导弹", x, y);
+	}
+	
+	public WeaponPos pos_星际导弹(float x, float y) {
+		return new WeaponPos(ST.name + "-星际导弹", x, y);
 	}
 	
 	public WeaponPos pos_机枪(float x, float y) {
 		return new WeaponPos(ST.name + "-机枪", x, y);
+	}
+	
+	public WeaponPos pos_星际机枪(float x, float y) {
+		return new WeaponPos(ST.name + "-星际机枪", x, y);
+	}
+	
+	public WeaponPos pos_涡轮激光炮(float x, float y) {
+		return new WeaponPos(ST.name + "-涡轮激光炮", x, y);
 	}
 	
 	public WeaponPos pos_光粒(float x, float y) {
@@ -53,6 +67,10 @@ public class UnitAttackProvider extends LayerProvider {
 		return new WeaponPos(ST.name + "-激光炮", x, y);
 	}
 	
+	public WeaponPos pos_星际激光炮(float x, float y) {
+		return new WeaponPos(ST.name + "-星际激光炮", x, y);
+	}
+	
 	public class WeaponPos {
 		public WeaponPos(String nameC, float xC, float yC) {
 			name = nameC;
@@ -62,6 +80,20 @@ public class UnitAttackProvider extends LayerProvider {
 		
 		public WeaponPos(String nameC) {
 			name = nameC;
+		}
+		
+		public Sound sound;
+		
+		public WeaponPos sound(Sound sound) {
+			this.sound = sound;
+			return this;
+		}
+		
+		public boolean mirror = false;
+		
+		public WeaponPos mirror(boolean mirror) {
+			this.mirror = mirror;
+			return this;
 		}
 		
 		public boolean top = true;
@@ -115,10 +147,12 @@ public class UnitAttackProvider extends LayerProvider {
 			rotateSpeed = pos.rotateSpeed;
 			//shadow = 20f;
 			top = pos.top;
+			mirror = pos.mirror;
 			shootY = pos.shootY;
 			recoil = 4f;
 			bullet = bulletType;
 			reload = 60 / bulletType.reloadMultiplier;
+			if (pos.sound != null) shootSound = pos.sound;
 			if (unitType.maxRange < bulletType.maxRange) {
 				unitType.maxRange = bulletType.maxRange;
 			}

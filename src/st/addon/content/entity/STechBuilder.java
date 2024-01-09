@@ -1,11 +1,13 @@
 package st.addon.content.entity;
 
+import mindustry.content.SectorPresets;
 import mindustry.content.TechTree;
 import mindustry.ctype.UnlockableContent;
 import mindustry.game.Objectives;
 import mindustry.type.Item;
 import mindustry.type.ItemStack;
 import mindustry.type.Liquid;
+import mindustry.type.SectorPreset;
 import mindustry.world.Block;
 
 public class STechBuilder {
@@ -19,7 +21,6 @@ public class STechBuilder {
 			/*b.researchCost = null;
 			System.out.println(content + " " + content.getClass() + " " + b.requirements.length + " " + b.researchCostMultipliers + " " + b.researchRequirements());*/
 		}
-		
 		/*for (var i : content.researchRequirements()) {
 			//System.out.println(content + " " + i.toString());
 		}*/
@@ -29,6 +30,9 @@ public class STechBuilder {
 		tech = item.techNode;
 		if ((content instanceof Item) || (content instanceof Liquid)) {
 			req(new Objectives.Produce(content));
+		}
+		if ((content instanceof SectorPreset) && (item instanceof SectorPreset s)) {
+			req(new Objectives.SectorComplete(s));
 		}
 		return this;
 	}

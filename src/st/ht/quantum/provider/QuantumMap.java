@@ -62,6 +62,7 @@ public class QuantumMap extends LayerProvider {
 	public QuantumNetwork globalTeam(int id) {
 		return globalTeam("" + id);
 	}
+	
 	//状态查询
 	public boolean isSector = false;
 	public Sector sector;
@@ -70,7 +71,7 @@ public class QuantumMap extends LayerProvider {
 	public void clear() {
 		teams.clear();
 	}
-
+	
 	//载入地图的方块
 	public void init_block() {
 		var isClear = new HashMap<>();
@@ -192,6 +193,7 @@ public class QuantumMap extends LayerProvider {
 	//从网络拿走物品
 	public QuantumRequest global_take(String teamId, QuantumRequest require, Sector ignore) {
 		var result = new QuantumRequest();
+		if (Vars.state.rules.planet == null) return result;
 		//给一份清单，然后从全局网络减少
 		/*var keys = store.keys();
 		for (var i : keys) {
@@ -272,6 +274,34 @@ public class QuantumMap extends LayerProvider {
 		return result;*/
 		var isChange = false;
 		var qn = globalTeam(teamId);
+		//核心拿物品[不能跨星球]
+		if ((Vars.state.rules.defaultTeam.id + "").equals(teamId)) {
+			for (var i : Vars.state.rules.planet.sectors) {
+				if (!(i.isCaptured() || i.isBeingPlayed() || i.isAttacked())) continue;
+				var items = i.items();
+				for (var j : require.items.data.entrySet()) {
+					var name = j.getKey();
+					var data = j.getValue();
+					if (data <= 0) continue;
+					var item = Vars.content.item(name);
+					if (item == null) continue;
+					//核心物品大于
+					if (items.get(item) > data) {
+						i.removeItem(item, Math.round(data));
+						result.items.add(name, data);
+						require.items.add(name, -data);
+					}
+					//
+					else {
+						var has = items.get(item);
+						i.removeItem(item, has);
+						result.items.add(name, (float) has);
+						require.items.add(name, (float) -has);
+					}
+				}
+			}
+		}
+		//[可以跨星球]
 		for (var j : require.items.data.entrySet()) {
 			var name = j.getKey();
 			var data = j.getValue();
@@ -356,13 +386,13 @@ public class QuantumMap extends LayerProvider {
 		try {
 			globalTeams.clear();
 			var type = new HashMap<String, QuantumNetwork>().getClass();
-			var data = daoSet.getJson("network",type);
+			var data = daoSet.getJson("network", type);
 			//System.out.println(data.getClass()+" " +data);
-			if (data==null) return;
-			data.forEach((name,d)->{
+			if (data == null) return;
+			data.forEach((name, d) -> {
 				//System.out.println(name+" "+d.getClass()+" "+d);
-				if (!(d instanceof HashMap<?,?> hd)) return;
-				globalTeams.put((String) name,store.parseOne((HashMap<String, Object>) hd));
+				if (!(d instanceof HashMap<?, ?> hd)) return;
+				globalTeams.put((String) name, store.parseOne((HashMap<String, Object>) hd));
 			});
 			//System.out.println(data);
 		} catch (Exception e) {
@@ -381,8 +411,8 @@ public class QuantumMap extends LayerProvider {
 		//for(var i in a){print(i+" "+a[i])}
 		//System.out.println(teams);
 		var a = new HashMap<>();
-		globalTeams.forEach((n,d)->{
-			a.put(n,d.toMap());
+		globalTeams.forEach((n, d) -> {
+			a.put(n, d.toMap());
 		});
 		daoSet.setJson("network", a);
 	}

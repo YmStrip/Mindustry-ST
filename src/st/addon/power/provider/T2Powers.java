@@ -57,10 +57,10 @@ public class T2Powers extends LayerProvider {
 		consumeLiquid(Liquids.water, 2f);
 		drawer = new DrawMulti(new DrawPlasma(), new DrawDefault(), new DrawWarmupRegion());
 	}};
-	//流沙发电机 600
+	//流沙发电机 120
 	public ThermalGenerator 流沙 = new ThermalGenerator("t2流沙发电机") {{
 		canOverdrive = false;
-		powerProduction = 600 / 60f;
+		powerProduction = 120f / 6 / 60;
 		generateEffect = Fx.redgeneratespark;
 		effectChance = 0.011f;
 		size = 2;
@@ -104,7 +104,7 @@ public class T2Powers extends LayerProvider {
 	//激光节点
 	public BeamNode 激光节点 = new BeamNode("t2激光节点") {{
 		size = 1;
-		laserColor2 = Color.rgb(200,255,255);
+		laserColor2 = Color.rgb(200, 255, 255);
 		consumesPower = outputsPower = true;
 		range = 60;
 		fogRadius = 10;

@@ -28,7 +28,7 @@ public class T1Transports extends LayerProvider {
 		category = Category.effect;
 	}};
 	//传送带
-	public Conveyor 超导管道 = new Conveyor("t1传送带") {{
+/*	public Conveyor 超导管道 = new Conveyor("t1传送带") {{
 		size = 1;
 		speed = 15 / 140f;
 		displayedSpeed = 15;
@@ -40,7 +40,7 @@ public class T1Transports extends LayerProvider {
 		liquidCapacity = 24f;
 		liquidPressure = 1.025f;
 		category = Category.liquid;
-	}};
+	}};*/
 	
 	public void run() {
 		//卸载器
@@ -49,7 +49,7 @@ public class T1Transports extends LayerProvider {
 			preset.inject(超导卸载器, 1);
 		}
 		//管道
-		{
+		/*{
 			超导管道.requirements = ItemStack.with(items.超导体, 1, Items.titanium, 1);
 			preset.inject(超导管道, 1);
 		}
@@ -57,6 +57,6 @@ public class T1Transports extends LayerProvider {
 		{
 			超导流体管道.requirements = ItemStack.with(items.超导体, 1, Items.titanium, 1, Items.metaglass, 1);
 			preset.inject(超导流体管道, 1);
-		}
+		}*/
 	}
 }

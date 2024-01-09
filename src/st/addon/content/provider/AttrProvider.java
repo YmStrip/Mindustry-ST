@@ -85,7 +85,7 @@ public class AttrProvider extends LayerProvider {
 	
 	public void 水() {
 		//核心区 2.txt.8f
-		Blocks.coreZone.attributes.set(水, 10f);
+		//Blocks.coreZone.attributes.set(水, 10f);
 		Blocks.water.attributes.set(水, 1f);
 		Blocks.sandWater.attributes.set(水, 2.5f);
 		Blocks.taintedWater.attributes.set(水, 0.5f);

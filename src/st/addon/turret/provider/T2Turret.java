@@ -4,14 +4,17 @@ import layer.annotations.Import;
 import layer.annotations.Provider;
 import layer.annotations.Require;
 import layer.extend.LayerProvider;
+import mindustry.content.Blocks;
 import mindustry.content.Fx;
 import mindustry.content.Items;
 import mindustry.content.Liquids;
+import mindustry.entities.pattern.ShootBarrel;
 import mindustry.entities.pattern.ShootSpread;
 import mindustry.gen.Sounds;
 import mindustry.type.ItemStack;
 import mindustry.world.blocks.defense.turrets.ContinuousLiquidTurret;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.world.blocks.defense.turrets.LaserTurret;
 import mindustry.world.blocks.defense.turrets.PowerTurret;
 import st.addon.content.SContent;
 import st.addon.content.provider.ItemProvider;
@@ -27,145 +30,122 @@ public class T2Turret extends LayerProvider {
 	@Require(cls = BulletProvider.class)
 	BulletProvider bullets;
 	@Require(cls = TurretPreset.class)
-	TurretPreset preset;
-	//dps 1024 range 40 power 1200
-	public PowerTurret 脉冲发射器 = new PowerTurret("脉冲发射器") {{
+	TurretPreset turrets;
+	
+	
+	public PowerTurret 高能电浆炮 = new PowerTurret("高能电浆炮") {{
 		size = 3;
-		range = 34 * 8;
-		consumePower(1200 / 60f);
-		shootSound = Sounds.missile;
-		inaccuracy = 4;
-	}};
-	//dps 800 range 40 power 1080
-	public ContinuousLiquidTurret 离子光束 = new ContinuousLiquidTurret("离子光束") {{
-		size = 3;
-		range = 40 * 8;
-		consumePower(1080 / 60f);
+		range = 360;
+		consumePower(25*2.5f);
 		shootSound = Sounds.laser;
 	}};
-	//dps 1200 range 45 power 1500
-	public PowerTurret 光子大炮 = new PowerTurret("光子大炮") {{
+	
+	public PowerTurret 高能元素机枪 = new PowerTurret("高能元素机枪") {{
+		shootSound = Sounds.shoot;
 		size = 3;
-		range = 45 * 8;
-		consumePower(1500 / 60f);
+		range = 360;
+		inaccuracy = 3;
+		consumePower(15*2.5f);
+	}};
+	public PowerTurret 高能激光炮 = new PowerTurret("高能激光炮") {{
 		shootSound = Sounds.laser;
+		size = 3;
+		range = 360;
+		consumePower(18.5f*2.5f);
+	}};
+	public PowerTurret 机械暴徒 = new PowerTurret("机械暴徒") {{
 		inaccuracy = 2;
+		inaccuracy = 1f;
+		shootSound = Sounds.missile;
+		size = 5;
+		range = 480;
+		shoot = new ShootBarrel() {{
+			barrels = new float[]{
+				-10, 4, 0,
+				-5, 4, 0,
+				0, 4, 0,
+				5, 4, 0,
+				10, 4, 0
+			};
+			shots = 1;
+			shotDelay = 1f;
+		}};
+		consumePower(36);
 	}};
-	//dps 1000/12 range 45 power 1500
-	public PowerTurret 正电子冲击波 = new PowerTurret("正电子冲击波") {{
-		shoot = new ShootSpread(15, 4f);
-		size = 3;
-		range = 45 * 8;
-		shootEffect = smokeEffect = Fx.lightningShoot;
-		consumePower(1500 / 60f);
-		shootSound = Sounds.shotgun;
-		inaccuracy = 1;
+	public LaserTurret 等离子光束 = new LaserTurret("等离子光束") {{
+		consumePower(36f * 4);
+		shootEffect = Fx.shootBigSmoke2;
+		shootCone = 40f;
+		recoil = 4f;
+		shake = 2f;
+		range = 360f;
+		reload = 90f;
+		firingMoveFract = 0.5f;
+		shootDuration = 230f;
+		shootSound = Sounds.laserbig;
+		loopSound = Sounds.beam;
+		loopSoundVolume = 2f;
+		scaledHealth = 200;
+		size = 5;
 	}};
-	//dps 400 range 65 power 1800
-	public PowerTurret 超电磁炮 = new PowerTurret("超电磁炮") {{
-		size = 3;
-		range = 65 * 8;
-		consumePower(1800 / 60f);
+	public PowerTurret 死光炮 = new PowerTurret("死光炮") {{
+		consumePower(40*2.5f);
 		shootSound = Sounds.railgun;
+		size = 5;
+		range = 400;
 	}};
-	
-	
-	public ItemTurret 电力幽灵 = new ItemTurret("电力幽灵") {{
-		size = 4;
-		range = 38 * 8;
-		consumePower(360 / 60f);
-		shootSound = Sounds.shoot;
-		inaccuracy = 5;
-	}};
-	
-	public ItemTurret 质量驱动炮 = new ItemTurret("质量驱动炮") {{
-		size = 3;
-		range = 45 * 8;
-		consumePower(780 / 60f);
-		shootSound = Sounds.shoot;
-		inaccuracy = 4;
-	}};
-	
 	@Override
 	public void run() {
-		//脉冲发射器
+		//高能电浆炮 dps 1000
 		{
-			脉冲发射器.requirements = ItemStack.with(items.超导体, 150, items.纳米碳管, 250, items.反重力陶瓷, 15, items.晶金, 50);
-			脉冲发射器.shootType = bullets.弹药_机枪
-				.build(items.金元素, 40, 3, 2f)
-				.multiplier(items.金元素, 1024)
-				.frag(bullets.弹片_星光, items.金元素, 1, 0.1f, 4, 0.5f)
+			高能电浆炮.requirements = ItemStack.with(items.超导体,350,items.纳米碳管,150,items.反重力陶瓷,50,items.反物质,50,items.晶金,50);
+			高能电浆炮.shootType = bullets.弹药_元素
+				.build(1000, items.水元素, 45f, 1f, 1f)
+				.frag(bullets.弹片_星光, items.水元素, 8, 0.9f, 8f, 1)
+				.frag(bullets.弹片_爆炸, items.水元素, 1, 0.9f, 8f, 1)
 				.bullet();
-			preset.inject(脉冲发射器, 2);
+			turrets.inject(高能电浆炮, 2);
 		}
-		//离子光束
+		//高能元素机枪 dps 1500
 		{
-			离子光束.requirements = ItemStack.with(items.超导体, 180, items.纳米碳管, 300, items.反重力陶瓷, 30, items.晶金, 100);
-			离子光束.ammo(Liquids.water, bullets.弹药_持续火焰
-				.build(items.土元素, 40, 1, 1.5f)
-				.multiplier(items.土元素, 800)
-				.bullet());
-			preset.inject(离子光束, 2);
-		}
-		//光子大炮
-		{
-			光子大炮.requirements = ItemStack.with(items.超导体, 150, items.纳米碳管, 150, items.反重力陶瓷, 10, items.晶金, 50);
-			光子大炮.shootType = bullets.弹药_元素
-				.build(items.金元素, 40, 1, 1f)
-				.multiplier(items.金元素, 1500)
-				.frag(bullets.弹片_爆炸, items.金元素, 1, 0.8f, 10, 1)
+			高能元素机枪.requirements = ItemStack.with(items.超导体,150,items.纳米碳管,200,items.反重力陶瓷,75,items.反物质,50,items.晶金,250);
+			高能元素机枪.shootType = bullets.弹药_元素
+				.build(1500, items.水元素, 45, 7, 1f)
+				.frag(bullets.弹片_元素狙击, items.火元素, 1, 0.4f, 4f, 0.5f)
 				.bullet();
-			preset.inject(光子大炮, 2);
+			turrets.inject(高能元素机枪, 2);
 		}
-		//质量驱动炮
+		//高能激光炮 dps 1200
 		{
-			质量驱动炮.requirements = ItemStack.with(items.超导体, 150, items.纳米碳管, 90, items.反重力陶瓷, 50, items.晶金, 80);
-			质量驱动炮.ammoTypes.put(Items.copper, bullets.弹药_大炮
-				.build(items.超导体, 45, 1, 0.8f)
-				.multiplier(items.超导体, 450)
-				.frag(bullets.弹片_爆炸, items.超导体, 1, 0.5f)
-				.bullet());
-			质量驱动炮.ammoTypes.put(Items.lead, bullets.弹药_大炮
-				.build(items.反重力陶瓷, 45, 1, 0.8f)
-				.multiplier(items.反重力陶瓷, 450)
-				.frag(bullets.弹片_爆炸, items.反重力陶瓷, 1, 0.5f)
-				.bullet());
-			preset.inject(质量驱动炮, 2);
-		}
-		//电力幽灵
-		{
-			电力幽灵.requirements = ItemStack.with(items.超导体, 150, items.纳米碳管, 50, items.反重力陶瓷, 50, items.晶金, 150);
-			电力幽灵.ammoTypes.put(Items.thorium, bullets.弹药_机枪
-				.build(items.辐矿石, 38, 6, 0.5f)
-				.multiplier(items.辐矿石, 1050)
-				.frag(bullets.弹片_元素狙击, items.辐矿石, 1, 0.3f, 4, 1)
-				.bullet());
-			电力幽灵.ammoTypes.put(Items.pyratite, bullets.弹药_机枪
-				.build(items.铬纳尔, 38, 6, 0.5f)
-				.multiplier(items.铬纳尔, 550)
-				.frag(bullets.弹片_元素狙击, items.铬纳尔, 1, 0.8f, 4, 1)
-				.frag(bullets.弹片_爆炸, items.铬纳尔, 1, 0.8f, 5, 1)
-				.bullet());
-			preset.inject(电力幽灵, 2);
-		}
-		//正电子冲击波
-		{
-			正电子冲击波.requirements = ItemStack.with(items.超导体, 150, items.纳米碳管, 150, items.反重力陶瓷, 10, items.晶金, 50);
-			正电子冲击波.shootType = bullets.弹药_扩散
-				.build(items.金元素, 45, 1, 1f)
-				.multiplier(items.金元素, 1000 / 12f)
+			高能激光炮.requirements = ItemStack.with(items.超导体,150,items.纳米碳管,150,items.反重力陶瓷,50,items.晶金,300);
+			高能激光炮.shootType = bullets.弹药_激光.build(1200, items.金元素, 45, 1, 0.8f)
 				.bullet();
-			preset.inject(正电子冲击波, 2);
+			turrets.inject(高能激光炮, 2);
 		}
-		//超电磁炮
+		//机械暴徒 dps 3000
 		{
-			超电磁炮.requirements = ItemStack.with(items.超导体, 250, items.纳米碳管, 150, items.反重力陶瓷, 10, items.晶金, 50);
-			超电磁炮.shootType = bullets.弹药_轨道炮
-				.build(items.晶金, 65, 0.15f, 2f)
-				.multiplier(items.晶金, 400)
-				.frag(bullets.弹片_爆炸, items.晶金, 1, 0.2f, 15, 1)
+			机械暴徒.requirements = ItemStack.with(items.超导体,500,items.纳米碳管,650,items.反重力陶瓷,250,items.反物质,250,items.晶金,50);
+			机械暴徒.shootType = bullets.弹药_高射
+				.build(3000, items.火元素, 60, 16f, 0.5f)
+				.frag(bullets.弹片_狙击, items.火元素, 1, 0.2f, 10, 0.5f)
 				.bullet();
-			preset.inject(超电磁炮, 2);
+			turrets.inject(机械暴徒, 2);
+		}
+		//死光炮 dps 1500
+		{
+			死光炮.requirements = ItemStack.with(items.超导体,450,items.纳米碳管,150,items.反重力陶瓷,150,items.反物质,50,items.晶金,650);
+			死光炮.shootType = bullets.弹药_激光
+				.build(1500, items.水元素, 50, 0.8f, 2.5f)
+				.bullet();
+			turrets.inject(死光炮, 2);
+		}
+		//等离子光束 dps 2500
+		{
+			等离子光束.requirements = ItemStack.with(items.超导体,450,items.纳米碳管,350,items.反重力陶瓷,250,items.反物质,50,items.晶金,350);
+			等离子光束.shootType = bullets.弹药_持续激光
+				.build(2500, items.水元素, 45, 0.5f, 2.5f)
+				.bullet();
+			turrets.inject(等离子光束, 2);
 		}
 	}
 }

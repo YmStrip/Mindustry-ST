@@ -54,8 +54,8 @@ public class T3Units extends LayerProvider {
 		flying = true;
 		targetGround = true;
 		targetAir = true;
-		health = 50000;
-		armor = 1500;
+		health = 15000000;
+		armor = 2500;
 		hitSize = 4 * 8;
 		speed = 60 / 8f;
 	}};
@@ -115,8 +115,7 @@ public class T3Units extends LayerProvider {
 				水滴,
 				unitAttack.pos_光粒(0, 0),
 				bullet.弹药_水滴
-					.build(items.水元素, 4, 5, 2, 1)
-					.multiplier(items.水元素, 1000)
+					.build(1000, items.水元素, 4, 5, 2)
 					.frag(bullet.弹片_元素狙击, items.水元素, 1, 0.9f, 5, 0.5f)
 					.frag(bullet.弹片_爆炸, items.水元素, 1, 0.9f, 5, 0.5f)
 					.bullet()
@@ -142,68 +141,67 @@ public class T3Units extends LayerProvider {
 		}
 		//九尾巨兵,九条命
 		{
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.9f;
 				health = 九尾巨兵.health * 0.8f;
 				armor = 九尾巨兵.armor * 0.8f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.8f;
 				health = 九尾巨兵.health * 0.75f;
 				armor = 九尾巨兵.armor * 0.75f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.75f;
 				health = 九尾巨兵.health * 0.6f;
 				armor = 九尾巨兵.armor * 0.6f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.7f;
 				health = 九尾巨兵.health * 0.55f;
 				armor = 九尾巨兵.armor * 0.55f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.6f;
 				health = 九尾巨兵.health * 0.45f;
 				armor = 九尾巨兵.armor * 0.45f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.5f;
 				health = 九尾巨兵.health * 0.35f;
 				armor = 九尾巨兵.armor * 0.35f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.5f;
 				health = 九尾巨兵.health * 0.25f;
 				armor = 九尾巨兵.armor * 0.25f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
-			九尾巨兵.stages.add(new SUnitStage(){{
+			九尾巨兵.stages.add(new SUnitStage() {{
 				name = "狐生";
 				speed = 九尾巨兵.speed * 0.5f;
 				health = 九尾巨兵.health * 0.2f;
 				armor = 九尾巨兵.armor * 0.2f;
-				effect(new StatusEntry().set(StatusEffects.overclock,30*60));
+				effect(new StatusEntry().set(StatusEffects.overclock, 30 * 60));
 			}});
 			unitAttack.injectWeapon(
 				九尾巨兵,
 				unitAttack.pos_光粒(0, 0),
 				bullet.弹药_元素
-					.build(items.土元素, 60, 12, 1, 1)
-					.multiplier(items.土元素, 1500)
+					.build(1500, items.土元素, 60, 12, 1)
 					.frag(bullet.弹片_元素狙击, items.水元素, 1, 0.9f, 5, 0.5f)
 					.frag(bullet.弹片_爆炸, items.水元素, 1, 0.5f, 5, 0.5f)
 					.bullet()
@@ -212,13 +210,12 @@ public class T3Units extends LayerProvider {
 				九尾巨兵,
 				unitAttack.pos_光粒(0, 0),
 				bullet.弹药_导弹
-					.build(items.土元素, 80, 1, 1, 1)
-					.multiplier(items.土元素, 800)
+					.build(800, items.土元素, 80, 1, 1)
 					.frag(bullet.弹片_元素狙击, items.水元素, 1, 0.9f, 5, 0.5f)
 					.frag(bullet.弹片_爆炸, items.水元素, 1, 0.5f, 5, 0.5f)
 					.bullet()
 			);
-			preset.inject(九尾巨兵,4);
+			preset.inject(九尾巨兵, 4);
 		}
 		//暗面主宰
 		{

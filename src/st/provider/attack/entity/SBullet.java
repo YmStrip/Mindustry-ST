@@ -1,29 +1,66 @@
 package st.provider.attack.entity;
 
+import arc.graphics.Color;
 import mindustry.entities.bullet.BulletType;
 import st.addon.content.entity.StItem;
 
 public class SBullet {
-	//弹药外部倍率
-	public float damageMultiplier = 1;
+	//乘数
+	public float damageMultiplier = 1f;
+	//默认射击速度
+	public float rate = 1f;
+	//默认宽度
+	public float width = 0.5f;
+	//默认射程
+	public float range = 30f;
+	//默认时间
+	public float time = 30f;
+	//预设颜色
+	public Color color = Color.white;
+	//预设伤害
+	public float damage = 50f;
+	public float ammoMultiplier = 2f;
 	
-	public SBulletBuilder build(StItem itemP, float rangeP, float speedP, float widthP, float damageMultiplierP) {
-		return new SBulletBuilder(this, itemP, rangeP, speedP, widthP, damageMultiplierP);
+	//damage color range speed width
+	public SBulletBuilder build(float damage) {
+		return new SBulletBuilder(this, damage);
 	}
-	public SBulletBuilder build(StItem itemP, float rangeP, float speedP, float widthP) {
-		return new SBulletBuilder(this, itemP, rangeP, speedP, widthP);
+	
+	public SBulletBuilder build(float damage, Color color) {
+		return new SBulletBuilder(this, damage, color);
 	}
+	
+	public SBulletBuilder build(float damage, StItem item) {
+		return new SBulletBuilder(this, damage, item.color);
+	}
+	
+	
+	public SBulletBuilder build(float damage, Color color, float range, float rate, float width) {
+		return new SBulletBuilder(this, damage, color).range(range).rate(rate).width(width);
+	}
+	
+	public SBulletBuilder build(float damage, StItem item, float range, float rate, float width) {
+		return new SBulletBuilder(this, damage, item.color).range(range).rate(rate).width(width);
+	}
+	
+	public SBulletBuilder build(float damage, Color color, float range, float rate) {
+		return new SBulletBuilder(this, damage, color).range(range).rate(rate);
+	}
+	
+	public SBulletBuilder build(float damage, StItem item, float range, float rate) {
+		return new SBulletBuilder(this, damage, item.color).range(range).rate(rate);
+	}
+	
+	public SBulletBuilder build(float damage, Color color, float range) {
+		return new SBulletBuilder(this, damage, color).range(range);
+	}
+	
+	public SBulletBuilder build(float damage, StItem item, float range) {
+		return new SBulletBuilder(this, damage, item.color).range(range);
+	}
+	
 	//生命周期 damage之后,frag之前,返回弹药实例
-	public BulletType provide(StItem itemP, float rangeP, float speedP, float widthP, float damageP) {
+	public BulletType provide(SBulletBuilder.SBulletDamageProv prov) {
 		return new BulletType();
-	}
-	
-	//计算速度
-	public float getSpeed(float 计算后的射程, float lifetime) {
-		return (60 / lifetime) * 8f * (计算后的射程 / 8 / 60);
-	}
-	
-	//生命周期: damage,bullet计算之前,负责修改一些参数之类的,例如倍增器
-	public void prepare(SBulletBuilder sb) {
 	}
 }

@@ -19,6 +19,10 @@ import mindustry.world.blocks.logic.MessageBlock;
 import mindustry.world.blocks.production.Drill;
 import mindustry.world.meta.Attribute;
 
+
+//640 * 360
+//960 * 540
+//1280 * 720
 public class index extends Mod {
 	@Override
 	public void loadContent() {
