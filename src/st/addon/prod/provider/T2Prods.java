@@ -6,10 +6,13 @@ import layer.annotations.Require;
 import layer.extend.LayerProvider;
 import mindustry.content.Fx;
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.type.ItemStack;
+import mindustry.type.LiquidStack;
 import mindustry.world.blocks.production.GenericCrafter;
 import st.addon.content.SContent;
 import st.addon.content.provider.ItemProvider;
+import st.addon.prod.entity.UpgradeProds;
 
 import static mindustry.type.ItemStack.with;
 
@@ -26,7 +29,7 @@ public class T2Prods extends LayerProvider {
 		craftEffect = Fx.smeltsmoke;
 		hasPower = true;
 		consumePower(24f);
-		consumeItems(with(Items.blastCompound, 1, Items.titanium,1));
+		consumeItems(with(Items.blastCompound, 1, Items.titanium, 1));
 	}};
 	public GenericCrafter 反重力陶瓷构造厂 = new GenericCrafter("反重力陶瓷构造厂") {{
 		size = 4;
@@ -56,6 +59,17 @@ public class T2Prods extends LayerProvider {
 		hasPower = true;
 		consumePower(28f);
 	}};
+	public UpgradeProds u = new UpgradeProds();
+	public GenericCrafter 三钛合金厂 = u.new UpgradeProd("三钛合金厂")
+		.input(with(Items.titanium, 3))
+		.inputLiquid(new LiquidStack(Liquids.water, 0.5f))
+		.speed(30)
+		.size(4)
+		.output(new ItemStack(Items.surgeAlloy, 2))
+		.power(34f)
+		.multiplier(3.5f)
+		.t(UpgradeProds.type.t2)
+		.block();
 	
 	@Override
 	public void run() {

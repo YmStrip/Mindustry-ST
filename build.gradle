@@ -1,7 +1,12 @@
 apply plugin: "java"
-
 version '1.0.0'
 sourceSets.main.java.srcDirs = ["src"]
+dependencies {
+    implementation files("C:\\Users\\YmStrip\\Desktop\\code\\java-util\\layer\\lib\\build\\libs\\lib.jar");
+    implementation group: 'org.fusesource.jansi', name: 'jansi', version: '1.11'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+
+}
 
 repositories {
     mavenCentral()
@@ -10,12 +15,7 @@ repositories {
 }
 
 
-dependencies {
-    implementation files("C:\\Users\\YmStrip\\Desktop\\code\\java-util\\layer\\lib\\build\\libs\\lib.jar");
-    implementation group: 'org.fusesource.jansi', name: 'jansi', version: '1.11'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
 
-}
 
 java {
     targetCompatibility = 8
@@ -92,6 +92,7 @@ jar {
 
     from("assets/") {
         include "**"
+        exclude "**/*.psd"
     }
     /*from("bundles/") {
         include "**"
@@ -124,4 +125,6 @@ task deploy(type: Jar) {
         }
     }
 }
+
+
 

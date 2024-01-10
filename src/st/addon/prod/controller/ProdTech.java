@@ -47,6 +47,7 @@ public class ProdTech extends LayerController {
 						.inChild(t1.超导爆炸厂)))
 				.child(t2.反物质构造厂, _0 -> _0
 					.child(t2.辐矿石构造厂))
+				.child(t2.三钛合金厂)
 				.child(t2.反重力陶瓷构造厂, _0 -> _0
 					.child(t2.铬纳尔构造厂, _1 -> _1
 						.child(t2.晶金构造厂))))

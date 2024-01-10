@@ -99,6 +99,13 @@ public class UpgradeProds {
 				basic.put(items.纳米碳管, 250);
 				basic.put(items.超导体, 50);
 			}
+			if (type == type.t2) {
+				level = 1;
+				basic.put(items.纳米碳管, 350);
+				basic.put(items.超导体, 80);
+				basic.put(items.铬纳尔, 100);
+				basic.put(items.晶金, 50);
+			}
 			var d = new ItemStack[basic.size];
 			var k = -1;
 			//map
