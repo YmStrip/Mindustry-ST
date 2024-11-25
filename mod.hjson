@@ -11,7 +11,7 @@ author: "YmStrip"
 main: "st.index"
 
 #the mod description as seen in the mod dialog
-description: "singularity technology"
+description: "st "
 
 #the mod version
 version: 1.0
