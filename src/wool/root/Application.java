@@ -6,6 +6,7 @@ import wool.module.effect.effect;
 import wool.module.fs;
 import wool.module.item.item;
 import wool.module.key.key;
+import wool.module.product.product;
 import wool.module.qt.qt;
 import wool.module.tech.tech;
 import wool.module.turret.turret;
@@ -77,6 +78,13 @@ public class Application {
                 key.deploy();
             } else {
                 key.init();
+            }
+        });
+        app.add((b) -> {
+            if (b) {
+                product.deploy();
+            } else {
+                product.init();
             }
         });
         app.add((b) -> {

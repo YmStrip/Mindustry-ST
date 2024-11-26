@@ -1,12 +1,13 @@
 package wool.entity;
 
 
-@FunctionalInterface
-interface Calc {
-    float callback(float a, float b);
-}
+
 
 public class Color {
+    @FunctionalInterface
+    interface Calc {
+        float callback(float a, float b);
+    }
     //mixin fac
     public static float fac(float a, float b, float res, float fac) {
         if (fac <= .5) {
