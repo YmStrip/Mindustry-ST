@@ -1,13 +1,12 @@
 package wool.module.turret;
-
-import mindustry.world.blocks.defense.turrets.Turret;
+import wool.module.turret.turrets.TurretT1Stinger;
 import wool.root.AppModule;
 
 public class turret extends AppModule {
-    public static Turret T1Turret;
+    public static TurretT1Stinger Stringer;
 
     public static void init() {
-
+        Stringer = new TurretT1Stinger();
     }
 
     public static void deploy() {

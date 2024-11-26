@@ -4,42 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="-">
-      <change afterPath="$PROJECT_DIR$/assets/project/fyurry.blend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/button/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/entity/Comp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/input/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutAbsolute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutFlex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutRelative.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/EventEmitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/EventPipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Timer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/bullet/bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/bullet/bullets/BulletLaser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/drill/drill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/effect/effect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/item/item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/key/entity/KeyContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/key/entity/KeyItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/key/key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/entity/QTContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/entity/QTContainerComp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/qt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/tech/entity/Tech.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/tech/tech.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
+    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="- todo . blender . f">
+      <change afterPath="$PROJECT_DIR$/assets/bundles/bundle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/bundles/bundle_zh_CN.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon-cyan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon-green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Antimatter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/CNT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Chrominar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementDark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementEarth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementFire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementLight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementMetal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementWater.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementWood.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Kyrium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Nexarion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Skyforge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Superconductor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/liquid/LiquidNano.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/entity/Tooltip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/item/color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/turret/entity/Turret.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/turret/turrets/TurretT1Stinger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Mindustry-BE-Desktop-25445.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/project/ui.blend" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/project/ui.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/turret/base-0-cyan.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/turrets/base-0-cyan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mod.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/mod.hjson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wool/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/bullet/entity/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/entity/Color.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Color.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/entity/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/Fs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/fs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/turret/TurretModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/turret/turret.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/root/Applaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/components/entity/VNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/entity/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/item/item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/item/item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/turret/turret.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/turret/turret.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/root/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +82,11 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="st" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -92,6 +104,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/assets/bundles/bundle_zh_CN.properties" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2pNQ3ODw7e9Wj5vN9Nwx6cO0AS3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -104,10 +119,11 @@
   "keyToString": {
     "Gradle.st [build].executor": "Run",
     "Gradle.st [jar].executor": "Run",
+    "Gradle.st [playground].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/YmStrip/Desktop/mdt/st/assets/project",
+    "last_opened_file_path": "C:/Users/YmStrip/Desktop/mdt/st/assets/bundles",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -120,15 +136,31 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\bundles" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\test" />
       <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\project" />
       <recent name="C:\Users\YmStrip\Desktop\mdt\st\src\wool\entity" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\sprites\turrets\base" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\sprites\turret" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\sprites\turret-base" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src\wool\module\item" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\sprites\liquid" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wool.module.turret.entity" />
       <recent name="wool.module.qt.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.st [build]">
-    <configuration name="st [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.st [playground]">
+    <configuration name="run" type="CompoundRunConfigurationType">
+      <toRun name="st [jar]" type="GradleRunConfiguration" />
+      <toRun name="st [playground]" type="GradleRunConfiguration" />
+      <method v="2" />
+    </configuration>
+    <configuration name="st [build]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,12 +182,12 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="st [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="st [jar]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -172,12 +204,34 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.st [build]" />
-        <item itemvalue="Gradle.st [jar]" />
-      </list>
-    </recent_temporary>
+    <configuration name="st [playground]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="playground" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.run" />
+      <item itemvalue="Gradle.st [build]" />
+      <item itemvalue="Gradle.st [playground]" />
+      <item itemvalue="Gradle.st [jar]" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -195,7 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732603856674</updated>
-      <workItem from="1732603857814" duration="14093000" />
+      <workItem from="1732603857814" duration="30735000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <option name="closed" value="true" />
@@ -205,7 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732611184263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- todo . blender . f">
+      <option name="closed" value="true" />
+      <created>1732621360910</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732621360910</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- todo . blender . f">
+      <option name="closed" value="true" />
+      <created>1732621368304</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732621368304</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +284,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="- todo . blender . f" />
+    <option name="LAST_COMMIT_MESSAGE" value="- todo . blender . f" />
   </component>
 </project>
