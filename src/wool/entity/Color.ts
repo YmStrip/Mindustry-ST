@@ -1,3 +1,4 @@
+//@ts-nocheck
 import ColorHash from 'color-hash'
 
 

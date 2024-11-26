@@ -4,26 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Bullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Color.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/Fs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/turret/TurretModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/root/AppModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/root/Applaction.java" afterDir="false" />
+    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/assets/project/fyurry.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/button/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/entity/Comp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/input/Input.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutAbsolute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutFlex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/components/layout/LayoutRelative.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/entity/EventEmitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/entity/EventPipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/entity/Timer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/bullet/bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/bullet/bullets/BulletLaser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/drill/drill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/effect/effect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/item/item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/key/entity/KeyContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/key/entity/KeyItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/key/key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/entity/QTContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/entity/QTContainerComp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/qt/qt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/tech/entity/Tech.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/tech/tech.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/Index.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/bullet/entity/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/entity/Color.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Color.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/entity/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/Fs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/fs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/turret/TurretModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/turret/turret.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/root/Applaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/components/entity/VNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +63,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="st" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="st" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="st" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -75,10 +102,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.st [build].executor": "Run",
+    "Gradle.st [jar].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/YmStrip/Desktop/mdt/st/src/wool/entity",
+    "last_opened_file_path": "C:/Users/YmStrip/Desktop/mdt/st/assets/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,8 +120,64 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\project" />
       <recent name="C:\Users\YmStrip\Desktop\mdt\st\src\wool\entity" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wool.module.qt.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.st [build]">
+    <configuration name="st [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--scan" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="st [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.st [build]" />
+        <item itemvalue="Gradle.st [jar]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,8 +195,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732603856674</updated>
-      <workItem from="1732603857814" duration="7225000" />
+      <workItem from="1732603857814" duration="14093000" />
     </task>
+    <task id="LOCAL-00001" summary="-">
+      <option name="closed" value="true" />
+      <created>1732611184263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732611184263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,5 +213,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
 </project>

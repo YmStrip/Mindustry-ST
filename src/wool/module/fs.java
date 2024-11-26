@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-public class Fs extends AppModule {
+public class fs extends AppModule {
     public static boolean isFile(String path) {
         return new File(path).isFile();
     }

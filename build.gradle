@@ -73,6 +73,7 @@ task jarAndroid{
 }
 
 jar{
+
     archiveFileName = "${base.archivesBaseName}Desktop.jar"
 
     from{
@@ -86,6 +87,8 @@ jar{
     from("assets/"){
         include "**"
     }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
 }
 
 task deploy(type: Jar){

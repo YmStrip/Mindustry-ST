@@ -1,8 +1,15 @@
-package wool.entity;
+package wool.module.bullet.entity;
+
+import wool.entity.Color;
+import wool.entity.Register;
 
 import java.util.ArrayList;
 
 public class Bullet extends Register {
+    public static Class<Bullet> Provide() {
+        return Bullet.class;
+    }
+
     public Color color = new Color("#ffffff");
     //r/s
     public float rate = 1f;

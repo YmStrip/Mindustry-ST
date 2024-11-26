@@ -1,14 +1,26 @@
 package wool.entity;
 
-import wool.module.Fs;
+import wool.module.fs;
+import wool.module.key.entity.KeyItem;
 
 import java.util.HashMap;
 
 
 public class Register {
+    public String icon = "";
+    public String label = "";
+    public float rank = 0;
+    public float serializeCount = 0;
+    public float configureCount = 0;
+
+    public KeyItem key() {
+        return new KeyItem();
+    }
+
     public static String fi;
 
     public static void configureData(Object data, HashMap assign) {
+        if (assign == null) return;
         var cls = data.getClass();
         for (Object key : assign.keySet()) {
             if (!(key instanceof String)) continue;
@@ -20,6 +32,17 @@ public class Register {
             } catch (Exception e) {
 
             }
+        }
+    }
+
+    public static void configureData(HashMap data, HashMap assign) {
+        if (assign == null) return;
+        for (Object key : assign.keySet()) {
+            if (!(key instanceof String)) continue;
+            var reg = data.get(data);
+            if (reg == null) continue;
+            if (!(reg instanceof Register)) continue;
+            ((Register) reg).configure((HashMap) assign.get(key));
         }
     }
 
@@ -38,6 +61,19 @@ public class Register {
                 }
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
+            }
+        }
+        return hashMap;
+    }
+
+    public static HashMap serializeDeep(HashMap data) {
+        var hashMap = new HashMap();
+        for (Object key : data.keySet()) {
+            var value = data.get(key);
+            if (value instanceof Register) {
+                hashMap.put(key, ((Register) value).serialize());
+            } else {
+                hashMap.put(key, value);
             }
         }
         return hashMap;
@@ -77,10 +113,12 @@ public class Register {
 
             }
         }
+        this.configureCount++;
         return this;
     }
 
     public HashMap serialize() {
+        this.serializeCount++;
         var data = new HashMap();
         var cls = this.getClass();
         var fis = cls.getFields();
@@ -120,14 +158,42 @@ public class Register {
     }
 
     public Register write(String fi) {
-        Fs.setDir(Fs.dirname(fi));
-        Fs.setJson(fi, this.serialize());
+        fs.setDir(fs.dirname(fi));
+        fs.setJson(fi, this.serialize());
         return this;
     }
 
     public Register read(String fi) {
-        var json = Fs.getJson(fi);
+        var json = fs.getJson(fi);
         this.configure(json);
         return this;
+    }
+
+    public HashMap assign(HashMap a, HashMap b) {
+        for (Object key : a.keySet()) {
+            a.put(key, b.get(key));
+        }
+        return a;
+    }
+
+    public HashMap assign(HashMap a, Object b) {
+        var cls = b.getClass();
+        var fis = cls.getFields();
+        for (var i = 0; i < fis.length; i++) {
+            try {
+                var field = fis[i];
+                field.setAccessible(true);
+                a.put(field.getName(), field.get(b));
+            } catch (Exception e) {
+
+            }
+        }
+        return a;
+    }
+
+    public Register() {
+        setIgnoreKeys(new String[]{
+                "ignoreKeys", "id", "component"
+        });
     }
 }
