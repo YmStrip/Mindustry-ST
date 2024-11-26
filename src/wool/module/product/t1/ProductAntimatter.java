@@ -8,17 +8,17 @@ import wool.module.product.entity.Product;
 
 import static mindustry.type.ItemStack.with;
 
-public class ProductCNT extends Product {
-    public ProductCNT() {
-        super("ProductCnt");
+public class ProductAntimatter extends Product {
+    public ProductAntimatter() {
+        super("ProductAntimatter");
         size = 3;
-        consumePower(6f);
+        consumePower(20f);
         craftTime = 30;
-        requirements = ItemStack.with(Items.copper, 100, Items.lead, 80);
+        requirements = ItemStack.with(Items.copper, 150, Items.lead, 80, Items.titanium, 100, item.CNT, 50);
         craftEffect = Fx.smeltsmoke;
         hasPower = true;
-        consumeItems(with(Items.coal, 2));
-        outputItem = new ItemStack(item.CNT, 2);
+        consumeItems(with(Items.copper, 2, Items.coal, 2));
+        outputItem = new ItemStack(item.Antimatter, 2);
         diff();
     }
 }

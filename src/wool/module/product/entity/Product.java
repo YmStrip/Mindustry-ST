@@ -41,6 +41,6 @@ public class Product extends GenericCrafter {
 
         hasPower = true;
         hasLiquids = true;
-        category = Category.production;
+        category = Category.crafting;
     }
 }

@@ -4,49 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="- todo . blender . f">
-      <change afterPath="$PROJECT_DIR$/assets/bundles/bundle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bundles/bundle_zh_CN.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-cyan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Antimatter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/CNT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Chrominar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementDark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementEarth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementFire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementLight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementMetal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementWater.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/ElementWood.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Kyrium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Nexarion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Skyforge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/items/Superconductor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/liquid/LiquidNano.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Tooltip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/item/color.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/turret/entity/Turret.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/turret/turrets/TurretT1Stinger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Mindustry-BE-Desktop-25445.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/start.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7ee57036-1171-4ead-a289-15780e91a195" name="Changes" comment="drawer fix , register ,">
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductAntimatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/turret/base-0-cyan.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/turrets/base-0-cyan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mod.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/mod.hjson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/entity/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/entity/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/item/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/item/item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/item/item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/turret/turret.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/turret/turret.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/root/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductCnt.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductCnt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +116,7 @@
       <recent name="C:\Users\YmStrip\Desktop\mdt\st\assets\sprites\liquid" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wool.module.product.t1" />
       <recent name="wool.module.turret.entity" />
       <recent name="wool.module.qt.entity" />
     </key>
@@ -249,7 +216,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732603856674</updated>
-      <workItem from="1732603857814" duration="30735000" />
+      <workItem from="1732603857814" duration="32909000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <option name="closed" value="true" />
@@ -275,7 +242,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732621368304</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="drawer fix , register ,">
+      <option name="closed" value="true" />
+      <created>1732639399657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732639399657</updated>
+    </task>
+    <task id="LOCAL-00005" summary="drawer fix , register ,">
+      <option name="closed" value="true" />
+      <created>1732639423687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732639423687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +268,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="-" />
     <MESSAGE value="- todo . blender . f" />
-    <option name="LAST_COMMIT_MESSAGE" value="- todo . blender . f" />
+    <MESSAGE value="drawer fix , register ," />
+    <option name="LAST_COMMIT_MESSAGE" value="drawer fix , register ," />
   </component>
 </project>
