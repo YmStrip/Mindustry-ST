@@ -12,12 +12,12 @@ public class ProductCNT extends Product {
     public ProductCNT() {
         super("ProductCnt");
         size = 3;
-        consumePower(6f);
-        craftTime = 30;
+        consumePower(2f);
+        craftTime = 60;
         requirements = ItemStack.with(Items.copper, 100, Items.lead, 80);
         craftEffect = Fx.smeltsmoke;
         hasPower = true;
-        consumeItems(with(Items.coal, 2));
+        consumeItems(with(Items.coal, 1));
         outputItem = new ItemStack(item.CNT, 2);
         diff();
     }
