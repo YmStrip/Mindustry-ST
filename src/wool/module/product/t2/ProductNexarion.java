@@ -2,6 +2,7 @@ package wool.module.product.t2;
 
 import mindustry.content.Fx;
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.type.ItemStack;
 import wool.module.item.item;
 import wool.module.product.entity.Product;
@@ -18,6 +19,7 @@ public class ProductNexarion extends Product {
         requirements = ItemStack.with(Items.copper, 100, Items.lead, 150, Items.silicon, 125, Items.thorium, 100, item.CNT, 100);
         craftEffect = Fx.smeltsmoke;
         hasPower = true;
+        consumeLiquid(Liquids.cryofluid, 1f);
         consumeItems(with(Items.thorium, 3));
         outputItem = new ItemStack(item.Kyrium, 1);
         diff();

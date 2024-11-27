@@ -2,6 +2,7 @@ package wool.module.product.t2;
 
 import mindustry.content.Fx;
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.type.ItemStack;
 import wool.module.item.item;
 import wool.module.product.entity.Product;
@@ -15,9 +16,10 @@ public class ProductKyrium extends Product {
         size = 3;
         consumePower(3f);
         craftTime = 60;
-        requirements = ItemStack.with(Items.copper, 150, Items.lead, 80, Items.silicon, 100, Items.titanium, 100, item.CNT, 100);
+        requirements = ItemStack.with(Items.copper, 150, Items.lead, 80, Items.silicon, 100, Items.titanium, 100, item.CNT, 100, Items.plastanium, 75, Items.surgeAlloy, 50);
         craftEffect = Fx.smeltsmoke;
         hasPower = true;
+        consumeLiquid(Liquids.cryofluid, 1f);
         consumeItems(with(Items.silicon, 1, Items.thorium, 1));
         outputItem = new ItemStack(item.Kyrium, 2);
         diff();

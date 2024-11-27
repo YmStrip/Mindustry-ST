@@ -4,22 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductChrominar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductKyrium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductNexarion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="blender shader">
+      <change afterPath="$PROJECT_DIR$/src/wool/entity/Transition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductSkyforge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductSuperconductor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementEarth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementFire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementMetal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementWater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementWood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t4/ProductElementDark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t4/ProductElementLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/render/entity/Render.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/render/renders/RenderFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/core/UnitSigma.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/entity/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/unit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductCnt.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductCnt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductAntimatter-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductAntimatter-heat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductChrominar-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductChrominar-heat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductKyrium-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductKyrium-heat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductNexarion-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductNexarion-heat.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wool/module/product/product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t1/ProductAntimatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductAntimatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t1/ProductCNT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductChrominar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductChrominar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductKyrium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductKyrium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductNexarion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductNexarion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/root/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +85,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -106,11 +126,18 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="wool.module.unit.entity" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wool.module.product.t4" />
+      <recent name="wool.module.product.t3" />
+      <recent name="wool.module.product.t2" />
       <recent name="wool.module.product.t1" />
     </key>
   </component>
@@ -228,11 +255,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732703918130</updated>
-      <workItem from="1732703920006" duration="9010000" />
+      <workItem from="1732703920006" duration="25232000" />
     </task>
+    <task id="LOCAL-00001" summary="blender shader">
+      <option name="closed" value="true" />
+      <created>1732714409575</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732714409575</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="blender shader" />
+    <option name="LAST_COMMIT_MESSAGE" value="blender shader" />
   </component>
 </project>

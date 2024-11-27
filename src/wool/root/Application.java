@@ -10,6 +10,7 @@ import wool.module.product.product;
 import wool.module.qt.qt;
 import wool.module.tech.tech;
 import wool.module.turret.turret;
+import wool.module.unit.unit;
 
 import java.util.ArrayList;
 
@@ -106,6 +107,13 @@ public class Application {
                 turret.deploy();
             } else {
                 turret.init();
+            }
+        });
+        app.add((b) -> {
+            if (b) {
+                unit.deploy();
+            } else {
+                unit.init();
             }
         });
     }
