@@ -4,35 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="blender shader">
-      <change afterPath="$PROJECT_DIR$/src/wool/entity/Transition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductSkyforge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductSuperconductor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementEarth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementFire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementMetal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementWater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t3/ProductElementWood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t4/ProductElementDark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/product/t4/ProductElementLight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/render/entity/Render.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/render/renders/RenderFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/core/UnitSigma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/entity/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/unit.java" afterDir="false" />
+    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="frame render">
+      <change afterPath="$PROJECT_DIR$/src/wool/module/unit/core/UnitZeta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/project/ui.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/assets/project/ui.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductAntimatter-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductAntimatter-heat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductChrominar-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductChrominar-heat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductKyrium-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductKyrium-heat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/prod/ProductNexarion-heat.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/prod/ProductNexarion-heat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductChrominar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductChrominar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductKyrium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductKyrium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/module/product/t2/ProductNexarion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/product/t2/ProductNexarion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wool/root/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/root/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/UnitSigma-cell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/UnitSigma.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/unit/sigma/UnitSigma.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0048.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0051.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0052.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0053.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0054.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0055.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0056.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0057.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0060.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0062.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0066.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0067.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0068.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0069.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0072.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0073.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0074.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0075.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0076.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0077.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0078.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0079.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0081.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0083.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0084.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0085.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0086.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0087.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0088.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0089.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0090.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0091.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0092.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0093.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0094.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0095.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sprites/unit/sigma/frame/UnitSigma0096.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/render/entity/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/render/entity/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/unit/core/UnitSigma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/unit/core/UnitSigma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/unit/entity/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/unit/entity/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wool/module/unit/unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wool/module/unit/unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/test/start.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,10 +128,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2pQgs6ROoNpFBCnrnWSqYlK8Afl" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -107,34 +140,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.st [build].executor": "Run",
-    "Gradle.st [deploy].executor": "Run",
-    "Gradle.st [jar].executor": "Run",
-    "Gradle.st [playground].executor": "Run",
-    "JavaClassFindUsagesOptions.isDerivedClasses": "true",
-    "JavaClassFindUsagesOptions.isFieldsUsages": "true",
-    "JavaClassFindUsagesOptions.isMethodsUsages": "true",
-    "JavaVariableFindUsagesOptions.isSearchForAccessors": "true",
-    "JavaVariableFindUsagesOptions.isSearchForTextOccurrences": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.st [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.st [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.st [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.st [playground].executor&quot;: &quot;Run&quot;,
+    &quot;JavaClassFindUsagesOptions.isDerivedClasses&quot;: &quot;true&quot;,
+    &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
+    &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
+    &quot;JavaVariableFindUsagesOptions.isSearchForAccessors&quot;: &quot;true&quot;,
+    &quot;JavaVariableFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\ide\\IntelliJ IDEA 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="wool.module.unit.entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wool.module.unit.core" />
       <recent name="wool.module.product.t4" />
       <recent name="wool.module.product.t3" />
       <recent name="wool.module.product.t2" />
@@ -234,8 +270,8 @@
       <list>
         <item itemvalue="Gradle.st [playground]" />
         <item itemvalue="Gradle.st [jar]" />
-        <item itemvalue="Gradle.st [deploy]" />
         <item itemvalue="Gradle.st [build]" />
+        <item itemvalue="Gradle.st [deploy]" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +291,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732703918130</updated>
-      <workItem from="1732703920006" duration="25232000" />
+      <workItem from="1732703920006" duration="31090000" />
+      <workItem from="1732743606862" duration="237000" />
     </task>
     <task id="LOCAL-00001" summary="blender shader">
       <option name="closed" value="true" />
@@ -265,7 +302,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732714409575</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="frame render">
+      <option name="closed" value="true" />
+      <created>1732736762228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732736762228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="frame render">
+      <option name="closed" value="true" />
+      <created>1732736764936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732736764936</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +326,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="blender shader" />
-    <option name="LAST_COMMIT_MESSAGE" value="blender shader" />
+    <MESSAGE value="frame render" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame render" />
   </component>
 </project>

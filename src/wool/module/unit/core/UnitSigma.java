@@ -12,7 +12,7 @@ public class UnitSigma extends Unit {
 	@Override
 	public void load() {
 		super.load();
-		renderBottom.regions(name, 24, 48, 96);
-		renderBottom.scaleBlock(size, sizeBase);
+		renderFire.regions(name, 24, 48, 96);
+		renderFire.scaleBlock(size, sizeBase);
 	}
 }

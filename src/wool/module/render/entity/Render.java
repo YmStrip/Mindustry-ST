@@ -55,8 +55,11 @@ public class Render {
 	public boolean transitionEnable = true;
 	public float transition = 800;
 	public float transitionCurrent = 0;
+	public void transitionIter(boolean add,float k) {
+		transitionCurrent = Math.min(transition, Math.max(transitionCurrent + (add ? k * 1000 / 60f : k * -1000 / 60f), 0));
+	}
 	public void transitionIter(boolean add) {
-		transitionCurrent = Math.min(transition, Math.max(transitionCurrent + (add ? 1000 / 60f : -1000 / 60f), 0));
+		transitionIter(add,1);
 	}
 	public float transitionNorm() {
 		return Transition.norm(transitionCurrent, 0, transition);
@@ -69,15 +72,18 @@ public class Render {
 		return (transitionEnable ? transitionIterCalc() : 1) * (cycleEnable ? cycleCalc() : 1);
 	}
 	public void renderStart() {
-		Draw.alpha(alpha());
+		renderStart(alpha());
+	}
+	public void renderStart(float alpha) {
+		Draw.alpha(alpha);
 		Draw.scl *= scale;
-
 	}
 	public void renderEnd() {
 		Draw.scl /= scale;
 		Draw.alpha(1);
 	}
 	public void render(float x, float y) {
+		if (region==null) return;
 		renderStart();
 		Draw.rect(region, x, y, rotate);
 		renderEnd();
@@ -85,5 +91,15 @@ public class Render {
 	public void render(float x, float y, float rotate) {
 		this.rotate = rotate;
 		this.render(x, y);
+	}
+	public void renderAlpha(float x, float y, float alpha) {
+		if (region==null) return;
+		renderStart(alpha);
+		Draw.rect(region, x, y, rotate);
+		renderEnd();
+	}
+	public void renderAlpha(float x, float y, float alpha, float rotate) {
+		this.rotate = rotate;
+		renderAlpha(x, y, alpha);
 	}
 }
