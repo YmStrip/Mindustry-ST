@@ -37,10 +37,15 @@ public class RenderFrame extends Render {
 			regions.add(Core.atlas.find(name(name, i)));
 		}
 	}
+	public int frameIndex() {
+		var index = Math.floor(frameCurrent);
+		if (index < 0 || index >= regions.size() || regions.isEmpty()) return -1;
+		return (int) index;
+	}
 	@Override
 	public void render(float x, float y) {
-		var index = Math.floor(frameCurrent);
-		if (index < 0 || index >= regions.size() || regions.isEmpty()) return;
+		var index = frameIndex();
+		if (index < 0) return;
 		region = regions.get((int) index);
 		super.render(x, y);
 	}
