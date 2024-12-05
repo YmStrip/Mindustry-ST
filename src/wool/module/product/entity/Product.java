@@ -7,7 +7,7 @@ import mindustry.type.Category;
 import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.world.meta.BuildVisibility;
 import wool.entity.Tooltip;
-import wool.module.render.entity.Render;
+import wool.module.product.render.RenderProduct;
 
 public class Product extends GenericCrafter {
 	public Product(String name) {
@@ -16,21 +16,20 @@ public class Product extends GenericCrafter {
 	public int sizeRegion = 512;
 	public int sizeBase = 512;
 	public int level = 1;
-	public Render renderHeat = new Render() {{
-		cycle = 800;
-		cycleEnable = true;
-		transition = 1500;
-	}};
+	public RenderProduct render = new RenderProduct();
+	public Tooltip tooltip;
 	public void diff() {
-		var tooltip = new Tooltip(stats, Tooltip.cat());
+		if (tooltip != null) tooltip.clear();
+		tooltip = new Tooltip(stats, Tooltip.cat());
 		tooltip.setLevel(level);
+		tooltip.set("debug",render.toString());
 	}
 	@Override
 	public void load() {
 		super.load();
 		region.scale = size * 32f / sizeRegion;
-		renderHeat.region(name + "-heat");
-		renderHeat.scaleBlock(size, sizeBase);
+		render.load(this);
+		diff();
 	}
 
 	@Override
@@ -49,20 +48,21 @@ public class Product extends GenericCrafter {
 	}
 
 	public class ProductBuild extends GenericCrafter.GenericCrafterBuild {
-		public float heatTimeIter = 0;
-		public float heatCycleIter = 0;
-
+		public RenderProduct render = Product.this.render.copy();
+		public ProductBuild() {
+			//System.out.println("build:");
+			//System.out.println(render.toString());
+		}
 		@Override
 		public void updateTile() {
 			super.updateTile();
-			renderHeat.transitionIter(renderHeat.region.found() && this.efficiency > 0f);
-			renderHeat.cycleIter();
+			render.tick(this);
 		}
 
 		@Override
 		public void draw() {
 			super.draw();
-			renderHeat.render(x, y);
+			render.render(x, y, rotation);
 		}
 	}
 }

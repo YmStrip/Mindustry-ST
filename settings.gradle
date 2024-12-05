@@ -1,2 +1,3 @@
 rootProject.name = 'st'
+include 'src-util'
 

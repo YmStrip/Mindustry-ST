@@ -45,6 +45,13 @@ public class Application {
                 fs.init();
             }
         });
+        app.add((b) -> {
+            if (b) {
+                item.deploy();
+            } else {
+                item.init();
+            }
+        });
         //a-z
         app.add((b) -> {
             if (b) {
@@ -65,13 +72,6 @@ public class Application {
                 effect.deploy();
             } else {
                 effect.init();
-            }
-        });
-        app.add((b) -> {
-            if (b) {
-                item.deploy();
-            } else {
-                item.init();
             }
         });
         app.add((b) -> {

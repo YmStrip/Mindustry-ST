@@ -19,6 +19,7 @@ public class Register {
 
     public static String fi;
 
+
     public static void configureData(Object data, HashMap assign) {
         if (assign == null) return;
         var cls = data.getClass();

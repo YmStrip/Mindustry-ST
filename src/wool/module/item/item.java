@@ -1,12 +1,6 @@
 package wool.module.item;
 
-import arc.Core;
-import arc.Events;
-import arc.graphics.g2d.TextureRegion;
-import mindustry.game.EventType;
 import wool.module.item.entity.Item;
-import wool.module.render.entity.Render;
-import wool.module.render.renders.RenderFrame;
 import wool.root.AppModule;
 
 public class item extends AppModule {
@@ -36,7 +30,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 2;
-			diff();
 		}};
 		Antimatter = new Item("Antimatter") {{
 			level = 1;
@@ -47,7 +40,6 @@ public class item extends AppModule {
 			radioactivity = .5f;
 			charge = .5f;
 			hardness = 1;
-			diff();
 		}};
 		Chrominar = new Item("Chrominar") {{
 			level = 2;
@@ -58,7 +50,6 @@ public class item extends AppModule {
 			radioactivity = .0f;
 			charge = .25f;
 			hardness = 3;
-			diff();
 		}};
 		Kyrium = new Item("Kyrium") {{
 			level = 2;
@@ -69,7 +60,6 @@ public class item extends AppModule {
 			radioactivity = .8f;
 			charge = .8f;
 			hardness = 1;
-			diff();
 		}};
 		Nexarion = new Item("Nexarion") {{
 			level = 2;
@@ -80,7 +70,6 @@ public class item extends AppModule {
 			radioactivity = 1.5f;
 			charge = .5f;
 			hardness = 2;
-			diff();
 		}};
 		Skyforge = new Item("Skyforge") {{
 			level = 2;
@@ -91,7 +80,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 1;
-			diff();
 		}};
 		Superconductor = new Item("Superconductor") {{
 			level = 2;
@@ -102,7 +90,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 2f;
 			hardness = 1;
-			diff();
 		}};
 		ElementMetal = new Item("ElementMetal") {{
 			level = 3;
@@ -113,7 +100,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 5;
-			diff();
 		}};
 		ElementWood = new Item("ElementWood") {{
 			level = 3;
@@ -124,7 +110,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 2;
-			diff();
 		}};
 		ElementWater = new Item("ElementWater") {{
 			level = 3;
@@ -135,7 +120,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 0;
-			diff();
 		}};
 		ElementFire = new Item("ElementFire") {{
 			level = 3;
@@ -146,7 +130,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 0;
-			diff();
 		}};
 		ElementEarth = new Item("ElementEarth") {{
 			level = 3;
@@ -157,7 +140,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 5;
-			diff();
 		}};
 		ElementLight = new Item("ElementLight") {{
 			level = 4;
@@ -168,7 +150,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 0;
-			diff();
 		}};
 		ElementDark = new Item("ElementDark") {{
 			level = 4;
@@ -179,7 +160,6 @@ public class item extends AppModule {
 			radioactivity = 0f;
 			charge = 0f;
 			hardness = 0;
-			diff();
 		}};
 		ChronoDevour = new Item("ChronoDevour") {
 			{
@@ -191,11 +171,10 @@ public class item extends AppModule {
 				radioactivity = 0f;
 				charge = 0f;
 				hardness = 0;
-				diff();
 			}
 			@Override
 			public void loadIcon() {
-				renderFrame.regions(name, 24, 48, 96);
+				renderModifyFrame.regions(name, 24, 48, 96);
 				super.loadIcon();
 			}
 		};
