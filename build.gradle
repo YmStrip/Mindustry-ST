@@ -105,17 +105,3 @@ task deploy(type: Jar) {
         }
     }
 }
-task p_Copy(type: Copy) {
-    from 'C:\\Users\\YmStrip\\Desktop\\mdt\\st\\build\\libs\\'
-    include '*'
-
-    into 'C:\\Users\\YmStrip\\Desktop\\mdt\\st\\test\\data\\Mindustry\\mods'
-
-}
-task p_Run(type: Exec) {
-    workingDir "C:\\Users\\YmStrip\\Desktop\\mdt\\st\\test"
-    commandLine 'cmd' ,"/c" ,'start.bat'
-}
-task playground {
-    dependsOn p_Copy, p_Run
-}
