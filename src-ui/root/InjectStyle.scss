@@ -1,0 +1,33 @@
+
+body, html {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #151515;
+  color: white;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("FiraCode.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoLatin";
+  src: url("LatoLatin.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  user-select: none;
+  cursor: default;
+  box-sizing: border-box;
+  text-shadow: .5px .5px rgba(122.5, 122.5, 122.5, 0.5);
+  font-family: "Fira Code", serif;
+}

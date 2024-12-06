@@ -4,7 +4,173 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="keyframe , keyframe modify , keyframe solve" />
+    <list default="true" id="a1a23e1a-51d7-43d6-bd45-79d6c502663c" name="Changes" comment="refence">
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/install/BasicWindow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/install/Protocol.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/lib/CWindow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/lib/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui-app/preload.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/assets/background/Back1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/assets/ui/alert.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/border/BorderArrow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/border/BorderBevel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/border/BorderBracket.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/border/BorderProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/border/BorderSolid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/button/Button.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/button/ButtonProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/button/ButtonToolbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/card/CardProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/card/CardSolid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/grid/Grid2D.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/grid/Grid2DAxis.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/grid/Grid2DAxisProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/grid/Grid2DProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/input/Input.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/input/InputNumber.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/input/InputNumberProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/input/InputProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutAbsolute.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutAbstractProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutBlur.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutFlex.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutFlexProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutPercent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutPlace.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutRelative.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutShrinkBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/layout/LayoutShrinkBarProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/Observer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverComponent.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverFormProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverFormStyle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/observer/ObserverProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/point/PointBevel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/point/PointProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/point/PointSolid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/popover/Popover.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/popover/PopoverInstance.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/popover/PopoverProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/popover/Tooltip.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/scroll/LayoutScroll.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/scroll/LayoutScrollProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/scroll/ScrollbarLine.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/scroll/ScrollbarProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/scroll/ScrollbarSolid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/select/Select.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/select/SelectOption.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/select/SelectProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/silder/Slider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/components/silder/SliderProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/ArrayList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Color.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Diff.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/DiffSort.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/DiffSortGroup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Drager.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/EventEmitter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Middle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Register.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/RegisterComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/SortGroup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/Timer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/entity/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/locate/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/EventGlobal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/FsModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/OutModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/TransitionModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/i18n/I18NModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/i18n/component/T.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/IconModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/Icon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconApp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconAppPath.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconArrow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconCheck.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconCopy.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconEye.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconLock.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/IconShadow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/Image.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/ImageSvg.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/icon-cyan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/icon-green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/icon/component/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/IDModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/component/IDList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/component/IDProviderComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/component/IDProviderSearch.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/component/IDSlotComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/component/IDSlotListComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDBus.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDFactoryInstance.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDGroup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDP.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDProvider.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDS.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/entity/IDSlot.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/id/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/component/KeyComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/component/KeyContainerList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/component/KeyContainerSearch.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/entity/KeyContainer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/entity/KeyItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/key/entity/KeySearch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/keymap/KeymapModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/keymap/entity/KeyType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/keymap/entity/Keymap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/keymap/entity/Keyname.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/ModalModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/component/InjectModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/component/ModalComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/component/ModalSolid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/entity/Modal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/entity/ModalProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalAlert.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalAlertComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalConfirm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalConfirmComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalPrompt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/modal/modal/ModalPromptComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/style/StyleModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/style/component/InjectStyle.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/style/entity/Theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/style/entity/ThemeColorConfig.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/module/style/entity/ThemeItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/PageModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/component/PageComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/component/PageContainer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/entity/Page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/entity/PageProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/page/PageHome.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/page/PageHomeComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/page/PageRename.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/page/page/PageRenameComp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/root/FiraCode.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/root/InjectReload.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/root/InjectStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-ui/root/LatoLatin.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.electron.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-util/rename.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-util/start.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-util/test.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-util/test.ts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +226,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -78,40 +245,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.st [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.st [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.st [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.st [playground].executor&quot;: &quot;Run&quot;,
-    &quot;JavaClassFindUsagesOptions.isDerivedClasses&quot;: &quot;true&quot;,
-    &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
-    &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
-    &quot;JavaVariableFindUsagesOptions.isSearchForAccessors&quot;: &quot;true&quot;,
-    &quot;JavaVariableFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/YmStrip/Desktop/mdt/st/src-util&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\ide\\IntelliJ IDEA 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.st [build].executor": "Run",
+    "Gradle.st [deploy].executor": "Run",
+    "Gradle.st [jar].executor": "Run",
+    "Gradle.st [playground].executor": "Run",
+    "JavaClassFindUsagesOptions.isDerivedClasses": "true",
+    "JavaClassFindUsagesOptions.isFieldsUsages": "true",
+    "JavaClassFindUsagesOptions.isMethodsUsages": "true",
+    "JavaVariableFindUsagesOptions.isSearchForAccessors": "true",
+    "JavaVariableFindUsagesOptions.isSearchForTextOccurrences": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/YmStrip/Desktop/mdt/st/src-ui/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.app:dev.executor": "Run",
+    "npm.init.executor": "Run",
+    "npm.src:bundle.executor": "Run",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "ts.external.directory.path": "E:\\ide\\IntelliJ IDEA 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-util" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\assets" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\module" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\page\page" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\page\entity" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\assets\blackground" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-ui\page\page" />
+      <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-util\test" />
       <recent name="C:\Users\YmStrip\Desktop\mdt\st\src-util" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -128,51 +304,7 @@
       <recent name="wool.module.unit.core" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.st [playground]">
-    <configuration name="st [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="st [deploy]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="deploy" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.app:dev">
     <configuration name="st [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -217,12 +349,43 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="app:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="app:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="init" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="init" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="src:bundle" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="src:bundle" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.app:dev" />
+        <item itemvalue="npm.src:bundle" />
+        <item itemvalue="npm.init" />
         <item itemvalue="Gradle.st [playground]" />
         <item itemvalue="Gradle.st [jar]" />
-        <item itemvalue="Gradle.st [build]" />
-        <item itemvalue="Gradle.st [deploy]" />
       </list>
     </recent_temporary>
   </component>
@@ -250,6 +413,9 @@
       <workItem from="1733338754966" duration="27463000" />
       <workItem from="1733366654719" duration="16349000" />
       <workItem from="1733383313185" duration="5729000" />
+      <workItem from="1733462696161" duration="70000" />
+      <workItem from="1733462828632" duration="1675000" />
+      <workItem from="1733464545271" duration="3979000" />
     </task>
     <task id="LOCAL-00001" summary="blender shader">
       <option name="closed" value="true" />
@@ -315,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733389036267</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refence">
+      <option name="closed" value="true" />
+      <created>1733462730011</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733462730011</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +501,8 @@
     <MESSAGE value="blender" />
     <MESSAGE value="ChronoDevour" />
     <MESSAGE value="keyframe , keyframe modify , keyframe solve" />
-    <option name="LAST_COMMIT_MESSAGE" value="keyframe , keyframe modify , keyframe solve" />
+    <MESSAGE value="refence" />
+    <option name="LAST_COMMIT_MESSAGE" value="refence" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

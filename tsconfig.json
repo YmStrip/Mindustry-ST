@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+	"target": "ES2020",
+	"useDefineForClassFields": true,
+	"module": "ESNext",
+	"lib": [
+	  "ES2020",
+	  "DOM",
+	  "DOM.Iterable"
+	],
+	"skipLibCheck": true,
+	/* Bundler mode */
+	"moduleResolution": "bundler",
+	"allowImportingTsExtensions": true,
+	"resolveJsonModule": true,
+	"isolatedModules": true,
+	"noEmit": true,
+	"jsx": "preserve",
+	"jsxImportSource": "vue",
+	/* Linting */
+	"strict": true,
+	"noUnusedLocals": false,
+	"noUnusedParameters": false,
+	"noImplicitThis": false,
+	"noImplicitAny": false,
+	"noFallthroughCasesInSwitch": false,
+	"strictNullChecks": false,
+	"strictPropertyInitialization": false,
+	"baseUrl": "./",
+	"paths": {
+	  "@/*": [
+		"src-ui/*"
+	  ],
+	  "fyurry": [
+		"src-ui/root/Fyurry.ts"
+	  ],
+	},
+	"allowSyntheticDefaultImports": true,
+	"experimentalDecorators": true,
+  },
+  "include": [
+	"src-ui/**/*.ts",
+	"src-ui/**/*.tsx",
+	"src-ui/**/*.vue"
+  ],
+  "exclude": [
+	"snapshot/**/*",
+	"snapshot-dev/**/*",
+	"saves/**/*",
+	"mods/**/*",
+	"config/**/*"
+  ],
+  "references": [
+	{
+	  "path": "./tsconfig.node.json"
+	}
+  ]
+}

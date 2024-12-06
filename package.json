@@ -1,0 +1,46 @@
+{
+  "name": "wool",
+  "version": "4.7.2",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "init": "pnpm i --config.https-proxy=http://127.0.0.1:2334 --config.proxy=http://127.0.0.1:2334",
+    "init:electron": "set HTTP_PROXY=http://127.0.0.1:2334 && set ELECTRON_GET_USE_PROXY=http://127.0.0.1:2334 && node node_modules/electron/install.js",
+    "app:dev": "set ELECTRON_DEBUG_NOTIFICATIONS=true & electron-vite dev -c vite.electron.config.ts",
+    "app:build": "npm run typecheck && electron-vite build -c vite.electron.config.ts",
+    "lib:build": "ts-node src-bin/bin.js lib all",
+    "lib:build:dev": "ts-node src-bin/bin.js lib x64",
+    "src:bundle": "git bundle create ./fyurry-master.bundle --all"
+  },
+  "bin": {},
+  "devDependencies": {
+    "@electron-toolkit/utils": "^3.0.0",
+    "@electron/remote": "^2.1.2",
+    "@iconify-json/devicon": "^1.1.50",
+    "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/line-md": "^1.1.37",
+    "@iconify-json/mdi": "^1.1.66",
+    "@iconify-json/svg-spinners": "^1.1.2",
+    "@iconify-json/vscode-icons": "^1.1.35",
+    "@iconify/vue": "^4.1.2",
+    "@types/node": "^22.10.1",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "chokidar": "^4.0.1",
+    "color-hash": "^2.0.2",
+    "date-fns": "^4.1.0",
+    "electron": "^32.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.2.0",
+    "fs-extra": "^11.2.0",
+    "less": "^4.2.0",
+    "sass-embedded": "^1.82.0",
+    "vite": "^5.2.0",
+    "vue": "^3.4.21",
+    "vue-i18n": "^10.0.5",
+    "vue-tsc": "^2.0.6"
+  },
+  "binary": {
+    "napi_versions": [
+      7
+    ]
+  }
+}

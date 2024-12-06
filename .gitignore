@@ -139,7 +139,7 @@ nbactions.xml
 nb-configuration.xml
 
 ## Gradle
-
+/out
 /local.properties
 .gradle/
 gradle-app.setting
@@ -150,6 +150,7 @@ gradle-app.setting
 /html/build/
 /ios/build/
 /ios-moe/build/
+/node_modules
 
 ## OS Specific
 .DS_Store
@@ -159,3 +160,4 @@ android/libs/
 ./test/data
 /test/
 .idea
+fyurry-master.bundle
