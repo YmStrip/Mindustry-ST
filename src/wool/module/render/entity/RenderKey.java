@@ -105,9 +105,7 @@ public class RenderKey {
 			var item = this.keyframe.get(mid);
 			if (item.key == key) {
 				return transform(item.value);
-			} else if (right - left == 1) {
-				break;
-			} else if (item.key < key) {
+			} if (item.key < key) {
 				left = mid + 1;
 			} else if (item.key > key) {
 				right = mid - 1;
