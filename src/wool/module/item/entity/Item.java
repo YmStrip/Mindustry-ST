@@ -46,27 +46,23 @@ public class Item extends mindustry.type.Item {
 	public void load(onLoad onLoad) {
 		this.onLoad = onLoad;
 	}
-	@Override
-	public void load() {
-		super.load();
-		if (onLoad != null) onLoad.call();
-		diff();
-	}
 	public Item(String name) {
 		super(name);
 	}
+	@Override
 	public void loadIcon() {
+		if (onLoad != null) onLoad.call();
 		this.fullIcon = Core.atlas.find(this.getContentType().name() + "-" + this.name + "-full", Core.atlas.find(this.name + "-full", Core.atlas.find(this.name, Core.atlas.find(this.getContentType().name() + "-" + this.name, Core.atlas.find(this.name + "1")))));
 		this.uiIcon = Core.atlas.find(this.getContentType().name() + "-" + this.name + "-ui", this.fullIcon);
 		uiIcon.scale = (float) (size * 32) / sizeBase;
 		fullIcon.scale = (float) (size * 32) / sizeBase;
+		diff();
 		if (this.renderModifyFrame.regions.isEmpty()) return;
 		this.fullIcon = new TextureRegion(this.fullIcon);
 		this.uiIcon = new TextureRegion(this.uiIcon);
 		Events.run(EventType.Trigger.update, () -> {
 			renderModifyFrame.tickIter();
-			var index = renderModifyFrame.frameIndex();
-			var region = renderModifyFrame.regions.get(index);
+			var region = renderModifyFrame.frameRegion();
 			if (region == null) return;
 			uiIcon.set(region);
 			fullIcon.set(region);

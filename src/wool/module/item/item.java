@@ -171,11 +171,9 @@ public class item extends AppModule {
 				radioactivity = 0f;
 				charge = 0f;
 				hardness = 0;
-			}
-			@Override
-			public void loadIcon() {
-				renderModifyFrame.regions(name, 24, 48, 96);
-				super.loadIcon();
+				load(() -> {
+					renderModifyFrame.regions(name, 24, 48, 96);
+				});
 			}
 		};
 	}

@@ -7,6 +7,12 @@
         </Button><Input v-model:value="page.cwd" style="width: 100%"></Input>
       </LayoutFlex>
       <br>
+      <Button @click="page.build().then(()=>page.run())" display="bracket">
+        <IconShadow icon="mdi:play"/>
+        BUILD AND RUN
+      </Button>
+      <br>
+      <br>
       <Button @click="page.run()" display="bracket">
         <IconShadow icon="mdi:play"/>
         PLAYGROUND

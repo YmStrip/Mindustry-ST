@@ -161,3 +161,7 @@ android/libs/
 /test/
 .idea
 fyurry-master.bundle
+.venv
+dataset
+src-py
+/src-py/

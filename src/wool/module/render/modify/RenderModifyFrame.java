@@ -25,11 +25,11 @@ public class RenderModifyFrame extends RenderModify {
 	}
 	public ArrayList<TextureRegion> regions = new ArrayList<>();
 	public RenderModifyFrame regions(String name, int fps, int start, int end) {
-		this.frame = end - start;
+		this.frameTotal = end - start;
 		this.offset = start;
 		this.fps = fps;
 		regions.clear();
-		for (var i = 0; i < frame; i++) {
+		for (var i = 0; i < frameTotal; i++) {
 			regions.add(Core.atlas.find(name(name, i)));
 		}
 		return this;
@@ -42,6 +42,11 @@ public class RenderModifyFrame extends RenderModify {
 		if (v > this.frameTotal) v = this.frameTotal;
 		if (v < 0) v = 0;
 		return v;
+	}
+	public TextureRegion frameRegion() {
+		var index = frameIndex();
+		if (index<0) return null;
+		return this.regions.get(index);
 	}
 	public int frameIndex() {
 		var index = Math.floor(frame);
@@ -56,7 +61,7 @@ public class RenderModifyFrame extends RenderModify {
 	}
 	public void tickIter() {
 		tickAdd();
-		if (frame > frameTotal) {
+		if (frame >= frameTotal) {
 			frame = 0;
 		}
 	}

@@ -8,19 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RenderKey {
-	//min count of a item
-	public enum transitions {
-		l1, l2, l3
-	}
-
-	public transitions transition = transitions.l1;
-
-	public enum eases {
-		easeInOut,
-	}
-
-	public eases ease = eases.easeInOut;
-	public int count = 0;
+	public float min = -9999999.0f;
+	public float max = 9999999.0f;
+	private int size = 0;
 	public String label = "Keyframe";
 	public RenderKey label(String label) {
 		this.label = label;
@@ -32,7 +22,7 @@ public class RenderKey {
 	}
 	public RenderKey(float... def) {
 		this.defaultValue = def;
-		this.count = def.length;
+		this.size = def.length;
 		this.same(def);
 	}
 	public boolean enable = true;
@@ -41,128 +31,127 @@ public class RenderKey {
 		this.clear();
 		set(0, _arg);
 	}
-	public void set(float _key, float... _arg) {
-		//clamp
-		if (_arg.length < count) {
-			//push 0
-			var newArr = new float[count];
-			for (int i = -1; ++i < count; ) {
-				if (i <= _arg.length - 1) {
-					newArr[i] = _arg[i];
-				} else {
-					newArr[i] = 0;
-				}
-			}
-			_arg = newArr;
-		}
-		float[] final_arg = _arg;
-		var obj = new RenderKeyItem() {{
-			this.key = _key;
-			this.value = final_arg;
-		}};
-		if (this.keyframe.isEmpty()) {
-			this.keyframe.add(obj);
+	public void set(float key, float[] value) {
+		clamp(value);
+		var obj = new RenderKeyItem();
+		obj.key = key;
+		obj.value = clamp(value);
+		if (keyframe.isEmpty()) {
+			keyframe.add(obj);
 			return;
 		}
 		var left = 0;
 		var right = keyframe.size() - 1;
 		while (left <= right) {
-			var mid = (int) ((left + right) / 2);
-			var item = this.keyframe.get(mid);
-			if (item.key == _key) {
-				this.keyframe.set(mid, obj);
+			var mid = (int) (left + right) / 2;
+			var item = keyframe.get(mid);
+			if (item.key == key) {
+				keyframe.set(mid, obj);
 				return;
-			} else if (item.key < _key) {
+			}
+			if (item.key < key) {
 				left = mid + 1;
-			} else if (item.key > _key) {
+			} else if (item.key > key) {
 				right = mid - 1;
 			}
 		}
 		keyframe.add(left, obj);
+		//set mode
+		if (left == 0) {
+			var r = keyframe.get(left + 1);
+			obj.rightMode = r.rightMode;
+			obj.rightTransition = r.rightTransition;
+		} else {
+			var r = keyframe.get(left - 1);
+			obj.rightMode = r.rightMode;
+			obj.rightTransition = r.rightTransition;
+		}
+	}
+	public void set(float key, float v) {
+		this.set(key, new float[]{v});
+	}
+	public void set(float key, RenderKeyTransition t, RenderKeyMode m) {
+		this.near(
+			key,
+			() -> null,
+			(a) -> {
+				a.rightMode = m;
+				a.rightTransition = t;
+				return null;
+			},
+			(a, b) -> {
+				a.rightMode = m;
+				a.rightTransition = t;
+				return null;
+			}
+		);
+	}
+	public void set(float key, RenderKeyTransition t) {
+		set(key, t, RenderKeyMode.easeInOut);
 	}
 	public float[] get(float key) {
-		if (this.keyframe.size() == 1) {
-			return transform(this.keyframe.get(0).value);
-		}
-		if (this.keyframe.isEmpty()) {
-			var arr = new float[count];
-			for (int i = -1; ++i < count; ) {
-				arr[i] = 0;
+		return this.near(
+			key,
+			() -> {
+				return clamp(new float[size]);
+			},
+			(a) -> {
+				return clamp(cache(key, a.value));
+			},
+			(a, b) -> {
+				return clamp(cache(key, transition(key, a, b)));
 			}
-			return transform(arr);
-		}
-		var z0 = this.keyframe.get(0);
-		var z1 = this.keyframe.get(this.keyframe.size() - 1);
-		if (key <= z0.key) {
-			return transform(z0.value);
-		} else if (key >= z1.key) {
-			return transform(z1.value);
-		}
-		var left = 0;
-		var right = keyframe.size() - 1;
-		while (left <= right) {
-			var mid = (int) ((left + right) / 2);
-			var item = this.keyframe.get(mid);
-			if (item.key == key) {
-				return transform(item.value);
-			} if (item.key < key) {
-				left = mid + 1;
-			} else if (item.key > key) {
-				right = mid - 1;
-			}
-		}
-		var l = this.keyframe.get(right);
-		var r = this.keyframe.get(left);
-		var array = new float[l.value.length];
-		for (int i = 0; i < array.length; i++) {
-			array[i] = transition(key, l.value[i], r.value[i]);
-		}
-		return transform(array);
+		);
 	}
 	public void del(float key) {
-		if (this.keyframe.isEmpty()) {
-			return;
-		}
+		if (keyframe.isEmpty()) return;
 		var left = 0;
-		var right = keyframe.size() - 1;
-		while (left < right) {
-			var mid = (int) ((left + right) / 2);
-			var item = this.keyframe.get(mid);
+		var right = (keyframe.size()) - 1;
+		while (left <= right) {
+			var mid = (left + right) / 2;
+			var item = keyframe.get(mid);
 			if (item.key == key) {
-				this.keyframe.remove(mid);
+				keyframe.remove(mid);
 				return;
-			} else if (item.key < key) {
+			}
+			if (item.key < key) {
 				left = mid + 1;
 			} else if (item.key > key) {
 				right = mid - 1;
 			}
 		}
 	}
-	public float[] transform(float[] value) {
-		var newArr = new float[value.length];
-		System.arraycopy(value, 0, newArr, 0, value.length);
-		return newArr;
-	}
-	public boolean has() {
-		return this.enable && !this.keyframe.isEmpty();
-	}
-	public float transition(float norm, float a, float b) {
-		switch (transition) {
-			case l1 -> {
-				return Transition.l1(norm, a, b);
-			}
-			case l2 -> {
-				return Transition.l2(norm, a, b);
-			}
-			case l3 -> {
-				return Transition.l3(norm, a, b);
+	public float[] clamp(float[] value) {
+		var data = new float[size];
+		for (int i = -1, size = value.length; ++i < size; ) {
+			if (size - 1 >= i) {
+				data[i] = Math.max(min, Math.min(max, value[i]));
+			} else {
+				data[i] = (Math.max(min, Math.min(max, value[i])));
 			}
 		}
-		return Transition.l1(norm, a, b);
+		return data;
+	}
+	public void clamp() {
+		for (var i : this.keyframe) {
+			i.value = clamp(i.value);
+		}
+	}
+	public void size(int size) {
+		this.size = size;
+		for (var i : keyframe) {
+			clamp(i.value);
+		}
+	}
+	public int size() {
+		return size;
 	}
 	public void clear() {
 		this.keyframe.clear();
 		this.set(0, defaultValue);
+	}
+	public float[] cache(float key, float[] value) {
+		return value;
 	}
 	//
 	public float[] solve = new float[]{0, 0, 0};
@@ -231,11 +220,9 @@ public class RenderKey {
 	protected RenderKey copy(RenderKey key) {
 		key.keyframe.clear();
 		key.keyframe.addAll(this.keyframe);
-		key.count = this.count;
+		key.size = this.size;
 		key.solve = this.solve;
 		key.label = this.label;
-		key.transition = this.transition;
-		key.ease = this.ease;
 		key.defaultValue = defaultValue;
 		if (keyframe.isEmpty()) same(defaultValue);
 		return key;
@@ -262,5 +249,182 @@ public class RenderKey {
 		}
 		data.put("solve", "[" + String.join(",", so) + "]");
 		return data;
+	}
+	@FunctionalInterface
+	public interface nearFind0<T> {
+		T call();
+	}
+
+	@FunctionalInterface
+	public interface nearFind1<T> {
+		T call(RenderKeyItem a);
+	}
+
+	@FunctionalInterface
+	public interface nearFind2<T> {
+		T call(RenderKeyItem a, RenderKeyItem b);
+	}
+	public <T> T near(
+		float key,
+		nearFind0<T> find0,
+		nearFind1<T> find1,
+		nearFind2<T> find2
+	) {
+		if (keyframe.isEmpty()) return find0.call();
+		if (keyframe.size() == 1) return find1.call(keyframe.get(0));
+		var z0 = keyframe.get(0);
+		var z1 = keyframe.get(keyframe.size() - 1);
+		if (key <= z0.key) {
+			return find1.call(z0);
+		}
+		if (key >= z1.key) {
+			return find1.call(z0);
+		}
+		var left = 0;
+		var right = keyframe.size() - 1;
+		while (left <= right) {
+			var mid = (int) ((left + right) / 2);
+			var item = keyframe.get(mid);
+			if (item.key == key) {
+				return find1.call(item);
+			}
+			if (item.key < key) {
+				left = mid + 1;
+			} else if (item.key > key) {
+				right = mid - 1;
+			}
+		}
+		var l = keyframe.get(right);
+		var r = keyframe.get(left);
+		return find2.call(l, r);
+	}
+	static float[] transition(float key, RenderKeyItem a, RenderKeyItem b) {
+		var array = new float[a.value.length];
+
+		var norm = (float) (key - a.key) / (b.key - a.key);
+		for (int i = -1; ++i < a.value.length; ) {
+			var start = a.value[i];
+			var delta = b.value[i] - start;
+
+			switch (a.rightTransition) {
+				case l1:
+					array[i] = (Transition.L1(norm) * delta + start);
+					break;
+				case l2:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.L2In(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.L2Out(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.L2InOut(norm) * delta + start);
+					}
+				case l3:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.L3In(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.L3Out(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.L3InOut(norm) * delta + start);
+					}
+				case l4:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.L4In(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.L4Out(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.L4InOut(norm) * delta + start);
+					}
+				case l5:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.L5In(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.L5Out(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.L5InOut(norm) * delta + start);
+					}
+				case exp:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.ExpIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.ExpOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.ExpInOut(norm) * delta + start);
+					}
+				case circ:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.CircIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.CircOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.CircInOut(norm) * delta + start);
+					}
+				case elastic:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.ElasticIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.ElasticOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.ElasticInOut(norm) * delta + start);
+					}
+				case back:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.BackIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.BackOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.BackInOut(norm) * delta + start);
+					}
+				case bounce:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.BounceIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.BounceOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.BounceOut(norm) * delta + start);
+					}
+				case sine:
+					switch (a.rightMode) {
+						case easeIn:
+							array[i] = (Transition.SineIn(norm) * delta + start);
+							break;
+						case easeOut:
+							array[i] = (Transition.SineOut(norm) * delta + start);
+							break;
+						default:
+							array[i] = (Transition.SineInOut(norm) * delta + start);
+					}
+				default:
+					array[i] = (Transition.L1(norm) * delta + start);
+					break;
+			}
+		}
+		return array;
 	}
 }
