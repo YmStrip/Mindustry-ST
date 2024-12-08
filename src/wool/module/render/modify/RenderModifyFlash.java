@@ -3,16 +3,17 @@ package wool.module.render.modify;
 import wool.module.render.entity.Render;
 import wool.module.render.entity.RenderModify;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RenderModifyFlash extends RenderModify {
+	{
+		label = "flash";
+	}
 	public RenderModifyFlash(Render key) {
 		super(key);
 	}
 	public RenderModifyFlash() {
 	}
-	public String label = "flash";
 	public float flashTotal = 800;
 	public float flash = 0;
 	//min cycle

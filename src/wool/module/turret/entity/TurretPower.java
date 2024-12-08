@@ -43,8 +43,8 @@ public class TurretPower extends mindustry.world.blocks.defense.turrets.PowerTur
 	@Override
 	public void load() {
 		super.load();
-		if (onLoad != null) onLoad.call();
 		render.load(this);
+		if (onLoad != null) onLoad.call();
 		diff();
 	}
 	{

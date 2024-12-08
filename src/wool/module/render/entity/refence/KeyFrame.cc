@@ -128,7 +128,7 @@ public:
 			return find1(z0);
 		}
 		if (key >= z1.key) {
-			return find1(z0);
+			return find1(z1);
 		}
 		auto left = 0;
 		auto right = keyframe.size() - 1;

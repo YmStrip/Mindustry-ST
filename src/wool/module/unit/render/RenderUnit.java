@@ -11,15 +11,15 @@ public class RenderUnit extends RenderEntity {
 	public void load(Object object) {
 		if (object instanceof Unit unit) {
 			//
-			renderLight.alpha.same(1);
+			renderLight.alpha.lock(1);
 			renderLight.region(unit.name + "-light");
 			renderLight.setScaleBlock(unit.size, sizeBase);
-			renderLight.alpha.same(1);
+			renderLight.alpha.lock(1);
 			//
-			renderAnimate.alpha.same(1);
+			renderAnimate.alpha.lock(1);
 			renderAnimate.setScaleBlock(unit.size, sizeBase);
 			//
-			renderFire.alpha.same(1);
+			renderFire.alpha.lock(1);
 			renderFire.setScaleBlock(unit.size, sizeBase);
 			//
 			setScale(unit.baseRegion, unit.size);

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RenderModifyFrame extends RenderModify {
+	{
+		label = "frame";
+	}
 	public RenderModifyFrame(Render key) {
 		super(key);
 	}
@@ -17,7 +20,6 @@ public class RenderModifyFrame extends RenderModify {
 	}
 	public boolean iterFrame = true;
 	public boolean iterFrameRepeat = true;
-	public String label = "frame";
 	public String name(String name, int frane) {
 		var rel = offset + frane;
 		var f = rel < 10 ? "000" + rel : rel < 100 ? "00" + rel : rel < 1000 ? "0" + rel : rel + "";

@@ -4,8 +4,11 @@ package wool.module.turret;
 import mindustry.entities.bullet.PointBulletType;
 import wool.module.item.item;
 import wool.module.render.entity.Render;
-import wool.module.render.entity.RenderKey;
+import wool.module.render.entity.RenderKeyMode;
+import wool.module.render.entity.RenderKeyTransition;
 import wool.module.render.modify.RenderModifyFrame;
+import wool.module.render.modify.RenderModifyMirror;
+import wool.module.render.modify.RenderModifyOffset;
 import wool.module.turret.entity.TurretItem;
 import wool.root.AppModule;
 
@@ -46,23 +49,29 @@ public class turret extends AppModule {
 				render.renderAnimate.alpha.clear();
 				render.renderAnimate.alpha.set(0, 0);
 				render.renderAnimate.alpha.set(1, 1);
-				render.renderAnimate.alpha.transition = RenderKey.transitions.l2;
 				//============================
-				render.renderWing.offset.set(0f, 0, 0);
-				render.renderWing.offset.set(0.5f, -20, 0);
-				render.renderWing.offset.set(1f, -20, -20);
+				render.renderWing.alpha.lock(1);
+				var wing = render.renderWing;
+				new RenderModifyOffset(render.renderWing) {{
+					rotate = 0;
+					offset.clear();
+					offset.set(0f, 0f, 0);
+					offset.set(0, RenderKeyTransition.bounce, RenderKeyMode.easeIn);
+					offset.set(.75f, -.25f * 10, -1f * 10);
+					offset.set(0.75f, RenderKeyTransition.bounce, RenderKeyMode.easeOut);
+					offset.set(1f, -1f * 10, -2f * 10);
+				}};
+				new RenderModifyMirror(render.renderWing);
 				//overlap alpha
 				render.renderWing.child(new Render("turret.wing.light") {{
 					region(name + "-wing-light");
 					alpha.clear();
 					alpha.set(0, 0);
 					alpha.set(1, 1);
+					new RenderModifyMirror(this) {{
+						align = wing;
+					}};
 				}});
-				new RenderModifyFrame(render.renderWing) {{
-					regions(name + "-wing", 24, 48, 96);
-					iterFrame = true;
-					iterFrameRepeat = true;
-				}};
 				//============================
 			});
 		}};

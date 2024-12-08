@@ -11,6 +11,52 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JSON {
+	@FunctionalInterface
+	public static interface nextKeyCall {
+		String get(int iter);
+	}
+	private static boolean isNumeric(String str) {
+		if (str == null || str.isEmpty()) {
+			return false;
+		}
+		for (char c : str.toCharArray()) {
+			if (!Character.isDigit(c)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static String nextKey(HashMap obj, String key, nextKeyCall call) {
+		if (obj.get(key) == null) {
+			return key;
+		}
+		var i = 0;
+		var k = key;
+		while (obj.get(k) != null) {
+			i++;
+			k = call.get(i);
+		}
+		return k;
+	}
+	public static String nextKey(HashMap obj, String key) {
+		return nextKey(obj, key, iter -> {
+			if (key.contains(".")) {
+				var split = key.split("\\.");
+				if (split.length == 0) return key + "." + iter;
+				var last = split[split.length - 1];
+
+				if (isNumeric(last)) {
+					try {
+						split[split.length - 1] = (Integer.parseInt(last) + iter) + "";
+						return String.join(".", split);
+					} catch (NumberFormatException ignored) {
+
+					}
+				}
+			}
+			return key + "." + iter;
+		});
+	}
 	public static HashMap<Object, Object> parse(String data) {
 		try {
 			var parser = new JSONParser();
@@ -52,7 +98,7 @@ public class JSON {
 				var value = i.get(data);
 				if (value instanceof Map<?, ?>) {
 					h.put(name, value);
-				} else if (value instanceof ArrayList<?> ||value.getClass().isArray()) {
+				} else if (value instanceof ArrayList<?> || value.getClass().isArray()) {
 					h.put(name, value);
 				} else h.put(name, value);
 			} catch (Exception e) {

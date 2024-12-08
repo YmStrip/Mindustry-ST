@@ -23,15 +23,15 @@ public class RenderKey {
 	public RenderKey(float... def) {
 		this.defaultValue = def;
 		this.size = def.length;
-		this.same(def);
+		this.lock(def);
 	}
 	public boolean enable = true;
 	public ArrayList<RenderKeyItem> keyframe = new ArrayList<>();
-	public void same(float... _arg) {
+	public void lock(float... _arg) {
 		this.clear();
 		set(0, _arg);
 	}
-	public void set(float key, float[] value) {
+	public void set(float key, float... value) {
 		clamp(value);
 		var obj = new RenderKeyItem();
 		obj.key = key;
@@ -86,6 +86,7 @@ public class RenderKey {
 			}
 		);
 	}
+
 	public void set(float key, RenderKeyTransition t) {
 		set(key, t, RenderKeyMode.easeInOut);
 	}
@@ -224,7 +225,7 @@ public class RenderKey {
 		key.solve = this.solve;
 		key.label = this.label;
 		key.defaultValue = defaultValue;
-		if (keyframe.isEmpty()) same(defaultValue);
+		if (keyframe.isEmpty()) lock(defaultValue);
 		return key;
 	}
 	@Override
@@ -278,7 +279,7 @@ public class RenderKey {
 			return find1.call(z0);
 		}
 		if (key >= z1.key) {
-			return find1.call(z0);
+			return find1.call(z1);
 		}
 		var left = 0;
 		var right = keyframe.size() - 1;
@@ -426,5 +427,11 @@ public class RenderKey {
 			}
 		}
 		return array;
+	}
+	public static float rotateX(float rad, float dx, float dy) {
+		return (float) (dx * Math.cos(rad) - dy * Math.sin(rad));
+	}
+	public static float rotateY(float rad, float dx, float dy) {
+		return (float) (dy * Math.cos(rad) + dx * Math.sin(rad));
 	}
 }

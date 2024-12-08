@@ -1,6 +1,56 @@
 package wool.module.render.entity;
 
 public class RenderKeyItem {
+	public static String name(RenderKeyTransition transition) {
+		switch (transition) {
+			case l2 -> {
+				return "l2";
+			}
+			case l3 -> {
+				return "l3";
+			}
+			case l4 -> {
+				return "l4";
+			}
+			case l5 -> {
+				return "l5";
+			}
+			case exp -> {
+				return "exp";
+			}
+			case back -> {
+				return "back";
+			}
+			case circ -> {
+				return "circ";
+			}
+			case sine -> {
+				return "sine";
+			}
+			case bounce -> {
+				return "bounce";
+			}
+			case elastic -> {
+				return "elastic";
+			}
+			default -> {
+				return "l1";
+			}
+		}
+	}
+	public static String name(RenderKeyMode mode) {
+		switch (mode) {
+			case easeIn -> {
+				return "easeIn";
+			}
+			case easeOut -> {
+				return "easeOut";
+			}
+			default -> {
+				return "easeInOut";
+			}
+		}
+	}
 	public float[] value;
 	public float key;
 	public RenderKeyTransition rightTransition = RenderKeyTransition.l1;
@@ -11,6 +61,7 @@ public class RenderKeyItem {
 		for (int i = 0; i < value.length; i++) {
 			data[i] = value[i] + "";
 		}
-		return "K(" + key + ")|[" + String.join(",", data) + "]>";
+		var point = "[" + String.join(",", data) + "]";
+		return name(rightTransition) + "." + name(rightMode) + "(" + key + ") -> " + point;
 	}
 }

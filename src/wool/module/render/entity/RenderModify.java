@@ -2,9 +2,17 @@ package wool.module.render.entity;
 
 import wool.entity.JSON;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RenderModify {
+public abstract class RenderModify {
+	public RenderModify() {
+
+	}
+	public RenderModify(Render render) {
+		onInit(render);
+	}
+	//
 	public String label = "Modify";
 	public Render render;
 	public boolean enable = true;
@@ -13,26 +21,26 @@ public class RenderModify {
 	public void onRender(float key) {
 
 	}
+	public void onInit(Render render) {
+		this.render = render;
+		if (render.copying) return;
+		if (!render.modify.contains(this)) {
+			render.modify.add(this);
+		}
+	}
 	public boolean onRenderPrevent(float key) {
 		return false;
 	}
-	public RenderModify copy() {
-		var copy = new RenderModify();
-		return copy(copy);
+	//
+	public abstract RenderModify copy();
+	public void copyAfter(RenderCopy copy) {
+
 	}
+
 	protected RenderModify copy(RenderModify copy) {
 		copy.label = label;
 		copy.enable = enable;
 		return copy;
-	}
-	public RenderModify() {
-
-	}
-	public RenderModify(Render render) {
-		this.render = render;
-		if (render != null && !render.modify.contains(this)) {
-			render.modify.add(this);
-		}
 	}
 	public void tick(Object object) {
 	}
@@ -41,15 +49,17 @@ public class RenderModify {
 		return JSON.stringify(json(), null, "    ");
 	}
 	public HashMap<Object, Object> json() {
-		return json_(new HashMap<>());
+		return jsonPut(new HashMap<>());
 	}
-	private HashMap<Object, Object> json_(HashMap<Object, Object> data) {
+	public HashMap<Object, Object> jsonPut(HashMap<Object, Object> data) {
 		var ch = new HashMap<>();
-		data.put("Modify(" + label + ")", ch);
+		var key = JSON.nextKey(data, "Modify(" + this.label + ")", iter -> "Modify(" + this.label + "#" + iter + ")");
+		data.put(key, ch);
 		ch.put("enable", enable);
 		json(ch);
 		return data;
 	}
+
 	protected void json(HashMap<Object, Object> data) {
 
 	}

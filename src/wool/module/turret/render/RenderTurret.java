@@ -33,7 +33,7 @@ public class RenderTurret extends RenderEntity {
 			renderAnimate.alpha.set(0, 0);
 			renderAnimate.alpha.set(1, 1);
 			//
-			renderWing.alpha.same(1);
+			renderWing.alpha.lock(1);
 			renderWing.region(turret.name + "-wing");
 			renderWing.setScaleBlock(turret.size, sizeBase);
 		}
